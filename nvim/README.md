@@ -18,6 +18,18 @@ sudo apt-get install neovim
 1. `mkdir -p ~/.config/nvim`
 2. Careful! This command will overwrite the existing nvim configs: `cp -Rf /configs/* ~/.config/nvim`
 3. `cp .vimrc ~/`
+4. add `export VIMCONFIG=~/.config.nvim` to `.bashrc` or `.zshrc`
+
+## Plugins
+
+### `fzf` - fuzzy finder
+
+1. `cd $VIMCONFIG/pack/bundle/start`
+2. `git clone https://github.com/junegunn/fzf`
+3. `$VIMCONFIG/pack/bundle/start/fzf/install --bin`
+4. add `export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin` to `.bashrc` or `.zshrc` file
+
+use command `:FZF` in vim
 
 ## Options
 

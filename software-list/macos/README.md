@@ -3,6 +3,7 @@
 ### Software Development
 
 - `iTerm` - a decent replacement for the built-in terminal
+- `sdkman` - tool to manage Java installations
 
 ### Utility
 

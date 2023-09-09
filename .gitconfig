@@ -1,0 +1,28 @@
+[alias]
+  b = branch
+  rb = rebase
+  cm = commit
+  cmfix = commit --amend --no-edit --no-verify
+  me = merge
+  sts = status --short
+  l = log --oneline
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=iso
+  cmt = commit -a
+  a = add
+  c = checkout
+  cb = checkout -b
+  rf = reflog
+  s = status
+  rbcommit = commit --amend --no-verify --no-edit
+        username = bratushkadan
+        email = bratushkadan@gmail.com
+
+[core]
+        excludesfile = ~/.gitignore
+[user]
+        email = bratushkadan@gmail.com
+        name = bratushkadan
+[init]
+        defaultBranch = main
+[pull]
+        ff = only

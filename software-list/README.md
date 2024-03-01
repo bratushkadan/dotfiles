@@ -2,10 +2,6 @@
 
 Here are platform-agnostic and cross-platform tools that I use on all of my desktops
 
-## Software Development
+## Sysadmin Tools
 - `lnav` - logfile navigator
-
-## Misc
-
-- `Tor Browser`
 

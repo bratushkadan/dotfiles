@@ -1,20 +1,25 @@
-# Configurations Repository
+# bratushkadan's dotfiles
 
 ## Syncing nvim
-rsync -av --delete ~/.config/nvim/ ./.config/nvim
 
-## Completed
+```sh
+rsync -av --delete ~/.config/nvim/ ./.config/nvim
+```
+
+## Completed ✅
 
 - tmux
+- git
+- zsh
+- nvim
 
-## In Progress
+## In Progress ⏳
 
 - starship
 
-## Todo
+## Todo 📋
 
-- zsh/bash: aliases, exported env variables, (or separate .dotenv files with non-sentitive information)
+- implement better dotenv files separation for .zshrc
 - git
-- ssh server
-- vim/nvim
+- ssh
 

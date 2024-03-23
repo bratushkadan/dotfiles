@@ -5,6 +5,8 @@ require('core.plugins')
 require('core.colors')
 
 -- Plugins
+require('plugins.autopairs')
+require('plugins.bufferline')
 require('plugins.cmp')
 require('plugins.neotree')
 require('plugins.treesitter')

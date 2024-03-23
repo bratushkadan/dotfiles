@@ -13,3 +13,11 @@ vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>', {})
 vim.keymap.set('n', '<leader>fs', ':Telescope live_grep_args<CR>', { noremap = true })
 vim.keymap.set('n', '<leader>fb', ':Telescope buffers<CR>', {})
 vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>', {})
+
+-- Bufferline and buffer mappings
+-- vim.keymap.set('n', '<leader>x', ':BufferLinePickClose<CR>')
+vim.keymap.set('n', '<leader>{', ':BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<leader>}', ':BufferLineCycleNext<CR>')
+vim.keymap.set('n', '<leader>X', ':bd<CR>')
+vim.keymap.set('n', '<leader>s', ':BufferLineSortByTabs<CR>')
+

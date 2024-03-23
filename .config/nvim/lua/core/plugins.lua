@@ -51,12 +51,17 @@ require("lazy").setup({
             {
                 'nvim-telescope/telescope-live-grep-args.nvim',
                 version = '^1.0.0'
+            },
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
             }
         },
         config = function ()
            require('telescope').load_extension('live_grep_args')
         end
     },
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+    { 'windwp/nvim-autopairs' },
+    { 'akinsho/bufferline.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
 })
 

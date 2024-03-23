@@ -32,8 +32,13 @@ require("lazy").setup({
 	{ 'neovim/nvim-lspconfig' },
 	{ 'williamboman/mason.nvim' },
 	{ 'williamboman/mason-lspconfig.nvim' },
-	{ 'neovim/nvim-lspconfig' },
-	{ 'hrsh7th/cmp-nvim-lsp' }, { 'hrsh7th/cmp-buffer' }, { 'hrsh7th/cmp-path' }, { 'hrsh7th/cmp-cmdline' }, { 'hrsh7th/nvim-cmp' },
-	{ 'nvim-telescope/telescope.nvim', tag = '0.1.1', dependencies = { 'nvim-lua/plenary.nvim' } }
+	{ 'hrsh7th/cmp-nvim-lsp' },
+	{ 'hrsh7th/cmp-buffer' },
+	{ 'hrsh7th/cmp-path' },
+	{ 'hrsh7th/cmp-cmdline' },
+	{ 'hrsh7th/nvim-cmp' },
+	{ 'hrsh7th/vim-vsnip' },
+	{ 'nvim-telescope/telescope.nvim', tag = '0.1.6', dependencies = { 'nvim-lua/plenary.nvim' } },
+	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 })
 

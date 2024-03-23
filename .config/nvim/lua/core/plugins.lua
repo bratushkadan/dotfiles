@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-        { 'phaazon/hop.nvim' },
+    { 'phaazon/hop.nvim' },
 	{ 'ThePrimeagen/vim-be-good' },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 }, -- color theme
 	{ 'joshdick/onedark.vim' }, -- color theme
@@ -38,7 +38,20 @@ require("lazy").setup({
 	{ 'hrsh7th/cmp-cmdline' },
 	{ 'hrsh7th/nvim-cmp' },
 	{ 'hrsh7th/vim-vsnip' },
-	{ 'nvim-telescope/telescope.nvim', tag = '0.1.6', dependencies = { 'nvim-lua/plenary.nvim' } },
+	{
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.6',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            {
+                'nvim-telescope/telescope-live-grep-args.nvim',
+                version = '^1.0.0'
+            }
+        },
+        config = function ()
+           require('telescope').load_extension('live_grep_args')
+        end
+    },
 	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 })
 

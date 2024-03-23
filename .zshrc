@@ -2,6 +2,33 @@
 
 eval "$(starship init zsh)"
 
+# Work
+
+## Setup
+fpath+=~/.zfunc
+
+## Vars
+export ARC_MOUNT_PATH="/Users/bratushkadan/.arcadia"
+export LAVKAFRONT_PATH=/Users/bratushkadan/.arcadia/taxi/lavka/frontend;
+export JOB_VM=bratushkadan.sas.yp-c.yandex.net
+export WORK_VM=$JOB_VM
+
+## Aliases
+alias arcmount="arc mount -m ~/.arcadia -S ~/.store --allow-other"
+alias arcm="arcmount"
+alias arcumnt="arc unmount -f ~/.arcadia"
+# `ya` executable
+alias ya='~/.arcadia/ya'
+
+# Aliases
+alias k="kubectl"
+# alias python="python3"
+alias pip="pip3"
+
+## docker
+# alias dockpsids="docker ps -a | awk '{if (NR > 1) { print $1 }}'"
+# alias docrma="dockpsids | xargs docker rm -f"
+
 
 # Nvim
 

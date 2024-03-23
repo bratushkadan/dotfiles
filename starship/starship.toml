@@ -1,2 +1,27 @@
 [nodejs]
 symbol = '🟩 '
+
+#[git_branch]
+#format = '( \(${symbol}git: [$branch]($style)\))'
+#style = 'bold purple'
+#
+#[git_commit]
+#
+#[git_state]
+#
+#[git_status]
+#format = "([$all_status]($style))"
+#style = 'bold purple'
+#
+#[cmd_duration]
+#min_time = 50
+#show_milliseconds = true
+
+#[custom.arc_branch]
+#command = '''arc info --json | jq .branch | sed -E "s/^\"(.+)\"$/\1/"'''
+#when = 'pwd | grep -E "^/Users/[a-zA-Z_\-]+/.arcadia/"'
+#description = 'show arc branch status'
+#format = '( \(${symbol}arc: [$output]($style)\))'
+#style = 'bold purple'
+#symbol = ' '
+

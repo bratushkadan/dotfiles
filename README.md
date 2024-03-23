@@ -1,5 +1,8 @@
 # Configurations Repository
 
+## Syncing nvim
+rsync -av --delete ~/.config/nvim/ ./.config/nvim
+
 ## Completed
 
 - tmux

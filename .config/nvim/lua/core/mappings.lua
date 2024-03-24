@@ -22,3 +22,9 @@ vim.keymap.set('n', '<leader>}', ':BufferLineCycleNext<CR>')
 vim.keymap.set('n', '<leader>X', ':bd<CR>')
 vim.keymap.set('n', '<leader>s', ':BufferLineSortByTabs<CR>')
 
+-- Motions
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+

@@ -23,7 +23,7 @@ vim.fn.sign_define("DiagnosticSignHint",
 require('neo-tree').setup({
     filesystem = {
         filtered_items = {
-            visible = true,
+            visible = false,
             hide_dotfiles = false,
             hide_gitignored = true,
         },

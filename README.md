@@ -14,6 +14,33 @@ Initializing symlinks is dead simple:
 - git
 - stow
 
+## Starship.rs - Cross-Platform shell | notes
+
+### Configure
+
+1. install starship: https://starship.rs/
+
+2.✅ copy starship.toml to ~/.config/starship.toml
+
+3. reload starship
+
+## `tmux` - terminal multiplexer
+
+### Steps to set up
+
+1. Install [tpm](https://github.com/tmux-plugins/tpm):
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+2. Run `mv tmux/.tmux.conf ~/` from the repository's root;
+3. Run `tmux` and press `C-a + I` (capital I, after keys rebound) to install plugins;
+
+### Useful `tmux` repositories
+
+- https://github.com/christoomey/vim-tmux-navigator#restoring-clear-screen-key-binding
+
 ## Completed ✅
 
 - tmux

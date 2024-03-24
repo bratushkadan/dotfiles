@@ -2,6 +2,8 @@
 
 eval "$(starship init zsh)"
 
+# export BASH_SILENCE_DEPRECATION_WARNING=1 # add this to /etc/profile if using Bash on OSX
+
 # Work
 
 ## Setup

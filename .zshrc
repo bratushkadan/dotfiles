@@ -10,10 +10,14 @@ eval "$(starship init zsh)"
 fpath+=~/.zfunc
 
 ## Vars
+export BROWSER="firefox"
+
 export ARC_MOUNT_PATH="/Users/bratushkadan/.arcadia"
 export LAVKAFRONT_PATH=/Users/bratushkadan/.arcadia/taxi/lavka/frontend;
 export JOB_VM=bratushkadan.sas.yp-c.yandex.net
 export WORK_VM=$JOB_VM
+#
+export DOTFILES="~/dotfiles"
 
 ## Aliases
 alias arcmount="arc mount -m ~/.arcadia -S ~/.store --allow-other"
@@ -42,6 +46,7 @@ export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 ## Use Neovim insead of Vim or Vi
 alias vim=nvim
 alias vi=nvim
+alias v=nvim
 
 # Software
 
@@ -50,7 +55,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Obsidian
-export OBSIDIAN=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault/.obsidian
+export OBSIDIAN_VAULT=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault
+export OBSIDIAN_CONF=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault/.obsidian
 export OBSIDIAN_SNIPPETS=$OBSIDIAN/snippets
 
 ## python3

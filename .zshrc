@@ -28,6 +28,7 @@ alias ya='~/.arcadia/ya'
 
 # Aliases
 alias k="kubectl"
+alias ku="k9s"
 # alias python="python3"
 alias pip="pip3"
 
@@ -50,9 +51,9 @@ alias v=nvim
 
 # Software
 
-## sdkman
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+## sdkman - java version manager
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Obsidian
 export OBSIDIAN_VAULT=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault
@@ -66,11 +67,13 @@ export PYTHONPATH=$PYTHONPATH:`pwd`;
 export GOPATH=~/go
 
 ## Yandex Cloud CLI
-if [ -f '/Users/bratushkadan/yandex-cloud/path.bash.inc' ]; then source '/Users/bratushkadan/yandex-cloud/path.bash.inc'; fi
-if [ -f '/Users/bratushkadan/yandex-cloud/completion.zsh.inc' ]; then source '/Users/bratushkadan/yandex-cloud/completion.zsh.inc'; fi
+# TODO: determine why it's giving an error on spawning a new shell
+# if [ -f '/Users/bratushkadan/yandex-cloud/path.bash.inc' ]; then source '/Users/bratushkadan/yandex-cloud/path.bash.inc'; fi
+# if [ -f '/Users/bratushkadan/yandex-cloud/completion.zsh.inc' ]; then source '/Users/bratushkadan/yandex-cloud/completion.zsh.inc'; fi
 
-## nvm
-export NVM_DIR=$HOME/.nvm;
-source $NVM_DIR/nvm.sh;
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+## nvm - nodejs version manager
+# export NVM_DIR=$HOME/.nvm;
+# source $NVM_DIR/nvm.sh;
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

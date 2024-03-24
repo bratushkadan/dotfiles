@@ -54,6 +54,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Todo 📋
 
+- **lazy loading for autocompletion of certain CLI applications (if possible)**
 - implement better dotenv files separation for .zshrc
 - git
 - ssh

@@ -62,6 +62,22 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+require('lspconfig')['tsserver'].setup({})
+require("lspconfig").terraformls.setup({})
+
+-- LSP servers
+require("lspconfig").lua_ls.setup {}
+require("lspconfig").jinja_lsp.setup {}
+require("lspconfig").helm_ls.setup {}
 require('lspconfig')['gopls'].setup {
 	capabilities = capabilities
 }
+require("lspconfig").pylyzer.setup {}
+require("lspconfig").rnix.setup {}
+require("lspconfig").bashls.setup {}
+require("lspconfig").sqls.setup {}
+require("lspconfig").ansiblels.setup {}
+require("lspconfig").rust_analyzer.setup {}
+require("lspconfig").yamlls.setup {}
+require("lspconfig").autotools_ls.setup {}
+require("lspconfig").marksman.setup {}

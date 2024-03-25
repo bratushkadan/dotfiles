@@ -62,22 +62,76 @@ cmp.setup.cmdline(':', {
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-require('lspconfig')['tsserver'].setup({})
+require('lspconfig')['tsserver'].setup({
+            capabilities = capabilities,
+})
 require("lspconfig").terraformls.setup({})
 
 -- LSP servers
-require("lspconfig").lua_ls.setup {}
-require("lspconfig").jinja_lsp.setup {}
-require("lspconfig").helm_ls.setup {}
-require('lspconfig')['gopls'].setup {
-	capabilities = capabilities
+require("lspconfig").lua_ls.setup {
+        capabilities = capabilities,
 }
-require("lspconfig").pylyzer.setup {}
-require("lspconfig").rnix.setup {}
-require("lspconfig").bashls.setup {}
-require("lspconfig").sqls.setup {}
-require("lspconfig").ansiblels.setup {}
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").yamlls.setup {}
-require("lspconfig").autotools_ls.setup {}
-require("lspconfig").marksman.setup {}
+require("lspconfig").jinja_lsp.setup({})
+require("lspconfig").helm_ls.setup({})
+require('lspconfig')['gopls'].setup {
+	capabilities = capabilities,
+}
+require("lspconfig").pylyzer.setup({})
+-- require("lspconfig").rnix.setup({})
+require("lspconfig").bashls.setup({
+    capabilities = capabilities,
+})
+require("lspconfig").sqls.setup({})
+require("lspconfig").ansiblels.setup({})
+-- require("lspconfig").rust_analyzer.setup({})
+local cfg = require('yaml-companion').setup({
+    builtin_matchers = {
+        kubernetes = { enabled = true },
+    },
+    schemas = {
+        {
+          name = "Argo CD Application",
+          uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"
+        },
+        {
+          name = "SealedSecret",
+          uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/bitnami.com/sealedsecret_v1alpha1.json"
+        },
+        -- schemas below are automatically loaded, but added
+        -- them here so that they show up in the statusline
+        {
+          name = "Kustomization",
+          uri = "https://json.schemastore.org/kustomization.json"
+        },
+        {
+          name = "GitHub Workflow",
+          uri = "https://json.schemastore.org/github-workflow.json"
+        },
+    },
+    lspconfig = {
+        settings = {
+            filetypes = { 'yaml', 'yml' },
+            yaml = {
+                validate = true,
+                schemaStore = {
+                    enable = false,
+                    url = "",
+                },
+                -- schemas from store, matched by filename
+                -- loaded automatically
+                schemas = require('schemastore').yaml.schemas({
+                    select = {
+                        'kustomization.yaml',
+                        'GitHub Workflow',
+                    }
+                })
+            },
+        },
+    }
+})
+require("lspconfig").yamlls.setup(cfg)
+require('telescope').load_extension('yaml_schema')
+
+require("lspconfig").autotools_ls.setup({})
+require("lspconfig").marksman.setup({})
+

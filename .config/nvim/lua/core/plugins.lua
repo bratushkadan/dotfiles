@@ -63,5 +63,13 @@ require("lazy").setup({
     },
     { 'windwp/nvim-autopairs' },
     { 'akinsho/bufferline.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
+    {
+        'someone-stole-my-name/yaml-companion.nvim',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+        }
+    },
+    { "b0o/schemastore.nvim" },
 })
 

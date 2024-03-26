@@ -35,6 +35,9 @@ require('mason-tool-installer').setup({
         'luaformatter',
         'sqlfmt',
         'yamlfmt',
+        -- DAP
+        'debugpy',
+        'delve',
     },
     auto_update = false
 })

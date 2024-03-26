@@ -54,6 +54,14 @@ require("lazy").setup({
     -- Linting & formatting
     { 'nvimtools/none-ls.nvim' },
 
+    -- DAP support
+    { 'mfussenegger/nvim-dap' },
+    -- DAP Go with ease
+    {
+        'leoluz/nvim-dap-go',
+        dependencies = 'mfussenegger/nvim-dap',
+    },
+
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.6',
@@ -82,5 +90,12 @@ require("lazy").setup({
         }
     },
     { "b0o/schemastore.nvim" },
+    -- {
+    --     'olexsmir/gopher.nvim',
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-treesitter/nvim-treesitter",
+    --     },
+    -- },
 })
 

@@ -51,6 +51,9 @@ require("lazy").setup({
     { 'L3MON4D3/LuaSnip' },
     { 'rafamadriz/friendly-snippets' },
 
+    -- Linting & formatting
+    { 'nvimtools/none-ls.nvim' },
+
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.6',

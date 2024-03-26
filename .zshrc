@@ -2,6 +2,9 @@
 
 eval "$(starship init zsh)"
 
+# pyenv
+export PATH="$(pyenv root)/shims:$PATH"
+
 # export BASH_SILENCE_DEPRECATION_WARNING=1 # add this to /etc/profile if using Bash on OSX
 
 # Work

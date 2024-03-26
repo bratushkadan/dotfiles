@@ -3,6 +3,7 @@ require'nvim-treesitter.configs'.setup {
 	  -- https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#available-modules
 	  "bash",
 	  "dockerfile",
+      -- "hcl",
 	  "go",
 	  "gomod",
 	  "gosum",

@@ -29,6 +29,7 @@ require("lazy").setup({
         }
     },
     { 'nvim-treesitter/nvim-treesitter' },
+    -- LSP support
     { 'neovim/nvim-lspconfig' },
     {
         'williamboman/mason.nvim',
@@ -37,12 +38,19 @@ require("lazy").setup({
         }
     },
     { 'williamboman/mason-lspconfig.nvim' },
-    { 'hrsh7th/cmp-nvim-lsp' },
+    -- Autocompletion
+    { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-cmdline' },
-    { 'hrsh7th/nvim-cmp' },
-    { 'hrsh7th/vim-vsnip' },
+    { 'saadparwaiz1/cmp_luasnip' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-nvim-lua' },
+
+    -- Snippets
+    { 'L3MON4D3/LuaSnip' },
+    { 'rafamadriz/friendly-snippets' },
+
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.6',

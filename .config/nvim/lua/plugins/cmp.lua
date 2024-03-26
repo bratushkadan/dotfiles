@@ -1,5 +1,5 @@
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
 
 cmp.setup({
 	snippet = {
@@ -54,9 +54,20 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require("lspconfig").bashls.setup({})
+local lspconfig_util = require('lspconfig.util')
+local lspconfig = require('lspconfig')
+local servers = { 'bashls', 'tsserver', 'jsonls', 'jinja_lsp', 'helm_ls', 'pylsp', 'sqls', 'ansiblels', 'rust_analyzer', 'terraformls', 'yamlls', 'autotools_ls', 'marksman' }
 
-require("lspconfig").lua_ls.setup {
+-- lsps with default config
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup({
+      capabilities = capabilities,
+  })
+end
+
+-- lsps configured below: lua, go
+
+lspconfig.lua_ls.setup {
         capabilities = capabilities,
         settings = {
             Lua = {
@@ -73,30 +84,24 @@ require("lspconfig").lua_ls.setup {
             },
         },
 }
-require('lspconfig').jsonls.setup({})
-require("lspconfig").jinja_lsp.setup({})
--- require('lspconfig')['jinja_lsp'].setup({
---     settings = {
---         filetypes = { 'sls', 'jinja' },
---     },
---     capabilities = capabilities,
--- })
-require("lspconfig").helm_ls.setup({})
-require('lspconfig')['gopls'].setup {
+lspconfig['gopls'].setup {
 	capabilities = capabilities,
+    cmd = { 'gopls' },
+    filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+    root_dir = lspconfig_util.root_pattern('go.work', 'go.mod', '.git'),
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            -- enables placeholders with the function signature/parameters when autocompleted (e.g. make -> make(type, 0))
+            usePlaceholders = true,
+            -- there's much more static analysis tools provided by gopls
+            -- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
+            analyses = {
+                unusedparams = true,
+            },
+        },
+    },
 }
-require("lspconfig").pylsp.setup({})
-require("lspconfig").sqls.setup({})
-require("lspconfig").salt_ls.setup({
-    cmd = { '/Users/bratushkadan/.pyenv/shims/python3.8', '-m', 'salt_lsp' },
-    filetypes = { 'sls' },
-})
-require("lspconfig").ansiblels.setup({})
-require("lspconfig").rust_analyzer.setup({})
-require("lspconfig").terraformls.setup({})
-require('lspconfig')['tsserver'].setup({
-            capabilities = capabilities,
-})
 
 -- local cfg = require('yaml-companion').setup({
 --     builtin_matchers = {
@@ -144,10 +149,7 @@ require('lspconfig')['tsserver'].setup({
 --     }
 -- })
 --
--- require("lspconfig").yamlls.setup(cfg)
+-- lspconfig.yamlls.setup(cfg)
 -- require('telescope').load_extension('yaml_schema')
-require('lspconfig').yamlls.setup{}
 
-require("lspconfig").autotools_ls.setup({})
-require("lspconfig").marksman.setup({})
 

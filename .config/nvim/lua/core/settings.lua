@@ -19,8 +19,7 @@ vim.opt.scrolloff = 8
 -- Additional settings
 vim.opt.splitright = true -- vertical splits are rendered to the right
 vim.opt.splitbelow = true -- horizontal splits are rendered below
-vim.opt.clipboard = 'unnamedplus' -- SHARED clipboard with the system
+vim.opt.clipboard = "unnamedplus" -- SHARED clipboard with the system
 -- opt.fixeol = false -- disable (?)
 -- opt.completeopt = 'menuone,noselect' -- built-in autocomplete
 -- vim.cmd [[autocmd BufEnter * set fo-=c fo-=r fo-=o]] -- do not make inserted line commented
-

@@ -32,7 +32,7 @@ require('mason-tool-installer').setup({
         -- Formatters
         'autopep8',
         'goimports',
-        'luaformatter',
+        'stylua',
         'sqlfmt',
         'yamlfmt',
         -- DAP

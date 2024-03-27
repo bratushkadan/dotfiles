@@ -6,6 +6,7 @@ require("mason-tool-installer").setup({
         "ansible-language-server",
         "autotools-language-server",
         "bash-language-server",
+        "buf",
         "docker-compose-language-service",
         "dockerfile-language-server",
         "gopls",

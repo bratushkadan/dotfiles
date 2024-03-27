@@ -3,6 +3,9 @@ vim.g.mapleader = " "
 vim.api.nvim_win_set_option(0, "number", true)
 vim.api.nvim_win_set_option(0, "relativenumber", true)
 
+-- Buffers, Windows and Tabs: https://learnvim.irian.to/basics/buffers_windows_tabs
+vim.keymap.set("n", "<leader>T", ":tabnew<CR>", { noremap = true })
+
 -- Neotree
 vim.keymap.set("n", "<leader>e", ":Neotree reveal<CR>")
 vim.keymap.set("n", "<leader>b", ":Neotree toggle left<CR>")
@@ -19,6 +22,7 @@ vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", {})
 -- vim.keymap.set('n', '<leader>x', ':BufferLinePickClose<CR>')
 vim.keymap.set("n", "<leader>{", ":BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<leader>}", ":BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<leader>M", ":BufferLinePick<CR>")
 vim.keymap.set("n", "<leader>X", ":bd<CR>")
 vim.keymap.set("n", "<leader>s", ":BufferLineSortByTabs<CR>")
 

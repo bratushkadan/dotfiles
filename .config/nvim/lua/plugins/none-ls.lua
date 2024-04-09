@@ -11,6 +11,9 @@ none_ls.setup({
         -- none_ls.builtins.formatting.goimports_reviser,
         -- none_ls.builtins.formatting.golines -- confines line length (to 80 by default)
         none_ls.builtins.formatting.stylua,
+
+        none_ls.builtins.formatting.black,
+        none_ls.builtins.diagnostics.mypy,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

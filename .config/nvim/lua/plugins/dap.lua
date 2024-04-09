@@ -3,6 +3,7 @@ local dap_go = require("dap-go")
 local map = vim.keymap.set
 
 vim.cmd("autocmd FileType go lua MapGo()")
+vim.cmd("autocmd FileType py lua MapPython()")
 
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" })
 map("n", "<leader>dus", function()
@@ -24,4 +25,11 @@ function MapGo()
     map("n", "<leader>gsj", "<cmd> GoTagAdd json <CR>", { desc = "Add json struct tags" })
     map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Add yaml struct tags" })
     map("n", "<leader>gie", "<cmd> GoIfErr <CR>", { desc = "Insert if err != nil boilerplate" })
+end
+
+function MapPython()
+    -- dap_python
+    map("n", "<leader>dpr", function()
+        require("dap-python").test_method()
+    end, { desc = "Test python method" })
 end

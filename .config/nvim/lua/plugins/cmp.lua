@@ -64,10 +64,8 @@ local servers = {
     "jsonls",
     "jinja_lsp",
     "helm_ls",
-    "pylsp",
     "sqls",
     "ansiblels",
-    "rust_analyzer",
     "terraformls",
     "yamlls",
     "autotools_ls",
@@ -117,6 +115,11 @@ lspconfig["gopls"].setup({
             },
         },
     },
+})
+
+lspconfig["pyright"].setup({
+    capabilities = capabilities,
+    filetypes = { "python" },
 })
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

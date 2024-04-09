@@ -15,8 +15,7 @@ require("mason-tool-installer").setup({
         "json-lsp",
         "lua-language-server",
         "marksman",
-        "python-lsp-server",
-        "rust-analyzer",
+        "pyright",
         "sqls",
         "terraform-ls",
         "tflint",
@@ -24,7 +23,9 @@ require("mason-tool-installer").setup({
         "yaml-language-server",
         -- Linters
         "ansible-lint",
+        "mypy",
         "pylint",
+        "ruff",
         "salt-lint",
         "selene",
         "snyk",
@@ -32,6 +33,7 @@ require("mason-tool-installer").setup({
         "yamllint",
         -- Formatters
         "autopep8",
+        "black",
         "goimports",
         "stylua",
         "sqlfmt",

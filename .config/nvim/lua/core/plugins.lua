@@ -36,6 +36,7 @@ require("lazy").setup({
         dependencies = {
             "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
+        -- TODO: there's an option to specify dependecies right in this section, there's no need for another plugin (like "mason-tool-installer")
     },
     { "williamboman/mason-lspconfig.nvim" },
     -- Autocompletion
@@ -65,7 +66,15 @@ require("lazy").setup({
             require("dap-go").setup(opts)
         end,
     },
-
+    {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        dependencies = "mfussenegger/nvim-dap",
+        config = function(_, opts)
+            local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+            require("dap-python").setup(path)
+        end,
+    },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.6",

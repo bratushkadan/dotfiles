@@ -157,51 +157,51 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
--- local cfg = require('yaml-companion').setup({
---     builtin_matchers = {
---         kubernetes = { enabled = true },
---     },
---     schemas = {
---         {
---           name = "Argo CD Application",
---           uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json"
---         },
---         {
---           name = "SealedSecret",
---           uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/bitnami.com/sealedsecret_v1alpha1.json"
---         },
---         -- schemas below are automatically loaded, but added
---         -- them here so that they show up in the statusline
---         {
---           name = "Kustomization",
---           uri = "https://json.schemastore.org/kustomization.json"
---         },
---         {
---           name = "GitHub Workflow",
---           uri = "https://json.schemastore.org/github-workflow.json"
---         },
---     },
---     lspconfig = {
---         settings = {
---             filetypes = { 'yaml', 'yml' },
---             yaml = {
---                 validate = true,
---                 schemaStore = {
---                     enable = false,
---                     url = "",
---                 },
---                 -- schemas from store, matched by filename
---                 -- loaded automatically
---                 schemas = require('schemastore').yaml.schemas({
---                     select = {
---                         'kustomization.yaml',
---                         'GitHub Workflow',
---                     }
---                 })
---             },
---         },
---     }
--- })
---
--- lspconfig.yamlls.setup(cfg)
--- require('telescope').load_extension('yaml_schema')
+local cfg = require("yaml-companion").setup({
+    builtin_matchers = {
+        kubernetes = { enabled = true },
+    },
+    schemas = {
+        {
+            name = "Argo CD Application",
+            uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json",
+        },
+        {
+            name = "SealedSecret",
+            uri = "https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/bitnami.com/sealedsecret_v1alpha1.json",
+        },
+        -- schemas below are automatically loaded, but added
+        -- them here so that they show up in the statusline
+        {
+            name = "Kustomization",
+            uri = "https://json.schemastore.org/kustomization.json",
+        },
+        {
+            name = "GitHub Workflow",
+            uri = "https://json.schemastore.org/github-workflow.json",
+        },
+    },
+    lspconfig = {
+        settings = {
+            filetypes = { "yaml", "yml" },
+            yaml = {
+                validate = true,
+                schemaStore = {
+                    enable = false,
+                    url = "",
+                },
+                -- schemas from store, matched by filename
+                -- loaded automatically
+                schemas = require("schemastore").yaml.schemas({
+                    select = {
+                        "kustomization.yaml",
+                        "GitHub Workflow",
+                    },
+                }),
+            },
+        },
+    },
+})
+
+lspconfig.yamlls.setup(cfg)
+require("telescope").load_extension("yaml_schema")

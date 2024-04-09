@@ -14,6 +14,11 @@ none_ls.setup({
 
         none_ls.builtins.formatting.black,
         none_ls.builtins.diagnostics.mypy,
+
+        none_ls.builtins.diagnostics.yamllint,
+        none_ls.builtins.formatting.yamlfmt,
+
+        none_ls.builtins.diagnostics.saltlint,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

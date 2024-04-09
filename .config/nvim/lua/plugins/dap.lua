@@ -1,55 +1,27 @@
 local dap_go = require("dap-go")
 
-local M = {}
+local map = vim.keymap.set
 
-M.dap = {
-    plugin = true,
-    n = {
-        ["<leader>db"] = {
-            "<cmd> DapToggleBreakpoint <CR>",
-            "Add breakpoint at line",
-        },
-        ["<leader>dus"] = {
-            function()
-                local widgets = require("dap.ui.widgets")
-                local sidebar = widgets.sidebar(widgets.scopes)
-                sidebar.open()
-            end,
-            "Open debugging sidebar",
-        },
-    },
-}
+vim.cmd("autocmd FileType go lua MapGo()")
 
-M.dap_go = {
-    plugin = true,
-    n = {
-        ["<leader>dgt"] = {
-            function()
-                dap_go.debug_test()
-            end,
-            "Debug go test",
-        },
-        ["<leader>dgl"] = {
-            function()
-                dap_go.debug_last()
-            end,
-            "Debug last go test",
-        },
-    },
-}
+map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Add breakpoint at line" })
+map("n", "<leader>dus", function()
+    local widgets = require("dap.ui.widgets")
+    local sidebar = widgets.sidebar(widgets.scopes)
+    sidebar.open()
+end, { desc = "Open debugging sidebar" })
 
-M.gopher = {
-    plugin = true,
-    n = {
-        ["<leader>gsj"] = {
-            "<cmd> GoTagAdd json <CR>",
-            "Add json struct tags",
-        },
-        ["<leader>gsy"] = {
-            "<cmd> GoTagAdd yaml <CR>",
-            "Add yaml struct tags",
-        },
-    },
-}
+function MapGo()
+    -- dap_go
+    map("n", "<leader>dgt", function()
+        dap_go.debug_test()
+    end, { desc = "Debug go test" })
+    map("n", "<leader>dgl", function()
+        dap_go.debug_last()
+    end, { desc = "Debug last go test" })
 
-dap_go.setup()
+    -- gopher
+    map("n", "<leader>gsj", "<cmd> GoTagAdd json <CR>", { desc = "Add json struct tags" })
+    map("n", "<leader>gsy", "<cmd> GoTagAdd yaml <CR>", { desc = "Add yaml struct tags" })
+    map("n", "<leader>gie", "<cmd> GoIfErr <CR>", { desc = "Insert if err != nil boilerplate" })
+end

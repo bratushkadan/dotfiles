@@ -59,7 +59,11 @@ require("lazy").setup({
     -- DAP Go with ease
     {
         "leoluz/nvim-dap-go",
+        ft = "go",
         dependencies = "mfussenegger/nvim-dap",
+        config = function(_, opts)
+            require("dap-go").setup(opts)
+        end,
     },
 
     {
@@ -90,11 +94,26 @@ require("lazy").setup({
         },
     },
     { "b0o/schemastore.nvim" },
-    -- {
-    --     'olexsmir/gopher.nvim',
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-treesitter/nvim-treesitter",
-    --     },
-    -- },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+    },
+    {
+        "olexsmir/gopher.nvim",
+        ft = "go",
+        config = function(_, opts)
+            require("gopher").setup(opts)
+        end,
+        build = function()
+            vim.cmd([[silent! GoInstallDeps]])
+        end,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
 })

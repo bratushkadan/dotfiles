@@ -130,4 +130,11 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
     },
+    {
+        "akinsho/git-conflict.nvim",
+        version = "*",
+    },
+    {
+        "sindrets/diffview.nvim",
+    },
 })

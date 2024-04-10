@@ -1,5 +1,9 @@
 -- https://habr.com/ru/articles/64224/
 
+-- Number for current line; relative numbers
+vim.api.nvim_win_set_option(0, "number", true)
+vim.api.nvim_win_set_option(0, "relativenumber", true)
+
 -- Search
 vim.opt.ignorecase = true
 -- vim.opt.smartcase = true -- case-sensitive search

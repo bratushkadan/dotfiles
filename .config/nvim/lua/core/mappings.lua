@@ -1,34 +1,49 @@
 vim.g.mapleader = " "
 
-vim.api.nvim_win_set_option(0, "number", true)
-vim.api.nvim_win_set_option(0, "relativenumber", true)
+local set = vim.keymap.set
+
+local function createMapper(mode)
+    return function(key, command)
+        set(mode, key, command, { noremap = true })
+    end
+end
+
+-- Normal
+Nm = createMapper("n")
+-- Insert
+Im = createMapper("i")
+-- Visual
+Vm = createMapper("v") -- "x" value is an alias for value "v", or "visual mode"
+-- Terminal
+Tm = createMapper("t")
 
 -- Buffers, Windows and Tabs: https://learnvim.irian.to/basics/buffers_windows_tabs
-vim.keymap.set("n", "<leader>T", ":tabnew<CR>", { noremap = true })
+-- set("n", "<leader>T", ":tabnew<CR>", { noremap = true })
+Nm("<leader>T", ":tabnew<CR>")
 
 -- Neotree
-vim.keymap.set("n", "<leader>e", ":Neotree reveal<CR>")
-vim.keymap.set("n", "<leader>b", ":Neotree toggle left<CR>")
-vim.keymap.set("n", "<leader>o", ":Neotree float focus<CR>")
+Nm("<leader>e", ":Neotree reveal<CR>")
+Nm("<leader>b", ":Neotree toggle left<CR>")
+Nm("<leader>o", ":Neotree float focus<CR>")
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
-vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", {})
-vim.keymap.set("n", "<leader>fs", ":Telescope live_grep_args<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", {})
-vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", {})
+Nm("<leader>ff", ":Telescope find_files<CR>")
+Nm("<leader>fg", ":Telescope live_grep<CR>")
+Nm("<leader>fs", ":Telescope live_grep_args<CR>")
+Nm("<leader>fb", ":Telescope buffers<CR>")
+Nm("<leader>fh", ":Telescope help_tags<CR>")
 
 -- Bufferline and buffer mappings
--- vim.keymap.set('n', '<leader>x', ':BufferLinePickClose<CR>')
-vim.keymap.set("n", "<leader>{", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<leader>}", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<leader>M", ":BufferLinePick<CR>")
-vim.keymap.set("n", "<leader>X", ":bd<CR>")
-vim.keymap.set("n", "<leader>s", ":BufferLineSortByTabs<CR>")
+-- set('n', '<leader>x', ':BufferLinePickClose<CR>')
+Nm("<leader>{", ":BufferLineCyclePrev<CR>")
+Nm("<leader>}", ":BufferLineCycleNext<CR>")
+Nm("<leader>M", ":BufferLinePick<CR>")
+Nm("<leader>X", ":bd<CR>")
+Nm("<leader>s", ":BufferLineSortByTabs<CR>")
 
 -- Motions
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("x", "<leader>p", '"_dP')
+Nm("<C-d>", "<C-d>zz")
+Nm("<C-u>", "<C-u>zz")
+Nm("n", "nzzzv")
+Nm("N", "Nzzzv")
+Vm("<leader>p", '"_dP')

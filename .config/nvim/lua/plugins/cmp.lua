@@ -1,6 +1,9 @@
+-- Filetype autodetect
+
+vim.api.nvim_command("autocmd BufRead,BufNewFile *.sls set filetype=sls")
+
 -- Set up nvim-cmp.
 local cmp = require("cmp")
-
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine

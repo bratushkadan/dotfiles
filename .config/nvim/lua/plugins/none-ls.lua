@@ -19,6 +19,9 @@ none_ls.setup({
         none_ls.builtins.formatting.yamlfmt,
 
         none_ls.builtins.diagnostics.saltlint,
+
+        none_ls.builtins.diagnostics.terraform_validate,
+        none_ls.builtins.formatting.terraform_fmt,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then

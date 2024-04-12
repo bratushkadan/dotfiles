@@ -61,8 +61,7 @@ local lspconfig_util = require("lspconfig.util")
 local lspconfig = require("lspconfig")
 local servers = {
     "bashls",
-    -- TODO: add buf as a custom server to lspconfig
-    -- "buf",
+    "bufls",
     "tsserver",
     "jsonls",
     "jinja_lsp",

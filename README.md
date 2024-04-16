@@ -6,7 +6,7 @@
 
 *Brewfile* is a collection of casks/formulas/taps needed to set up the system for user's demands.
 
-`brew bundle dump` writes current system's brew state into a file, `brew bundle -v` installs the dependencies listed in the *Brewfile*.
+`brew bundle dump -f` writes current system's brew state into a file, `brew bundle -v` installs the dependencies listed in the *Brewfile*.
 
 ## Arrangement
 

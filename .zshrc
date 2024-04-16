@@ -24,9 +24,8 @@ FPATH="/Users/$USER/.zsh/:$FPATH"
 export BROWSER="firefox"
 
 export ARC_MOUNT_PATH="/Users/bratushkadan/.arcadia"
-export LAVKAFRONT_PATH=/Users/bratushkadan/.arcadia/taxi/lavka/frontend;
-export JOB_VM=bratushkadan.sas.yp-c.yandex.net
-export WORK_VM=$JOB_VM
+export JOB_VM=bratushkadan-20-cvm.bootstrap.cloud-preprod.yandex.net
+export OLD_JOB_VM=bratushkadan.sas.yp-c.yandex.net
 #
 export DOTFILES="~/dotfiles"
 

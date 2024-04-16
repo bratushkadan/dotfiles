@@ -18,6 +18,8 @@ export TFENV_REMOTE='https://hashicorp-releases.yandexcloud.net/'
 ## Setup
 fpath+=~/.zfunc
 
+FPATH="/Users/$USER/.zsh/:$FPATH"
+
 ## Vars
 export BROWSER="firefox"
 
@@ -76,9 +78,8 @@ export PYTHONPATH=$PYTHONPATH:`pwd`;
 export GOPATH=~/go
 
 ## Yandex Cloud CLI
-# TODO: determine why it's giving an error on spawning a new shell
-# if [ -f '/Users/bratushkadan/yandex-cloud/path.bash.inc' ]; then source '/Users/bratushkadan/yandex-cloud/path.bash.inc'; fi
-# if [ -f '/Users/bratushkadan/yandex-cloud/completion.zsh.inc' ]; then source '/Users/bratushkadan/yandex-cloud/completion.zsh.inc'; fi
+if [ -f '/Users/bratushkadan/yandex-cloud/path.bash.inc' ]; then source '/Users/bratushkadan/yandex-cloud/path.bash.inc'; fi
+if [ -f '/Users/bratushkadan/yandex-cloud/completion.zsh.inc' ]; then source '/Users/bratushkadan/yandex-cloud/completion.zsh.inc'; fi
 
 ## nvm - nodejs version manager
 # export NVM_DIR=$HOME/.nvm;

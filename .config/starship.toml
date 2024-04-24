@@ -1,6 +1,11 @@
 [nodejs]
 symbol = '🟩 '
 
+[git_branch]
+disabled = false
+
+[git_status]
+disabled = true
 #[git_branch]
 #format = '( \(${symbol}git: [$branch]($style)\))'
 #style = 'bold purple'

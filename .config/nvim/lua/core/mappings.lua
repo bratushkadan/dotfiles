@@ -30,6 +30,12 @@ Nm("<leader>o", ":Neotree float focus<CR>")
 Nm("<leader>ff", ":Telescope find_files<CR>")
 Nm("<leader>fg", ":Telescope live_grep<CR>")
 Nm("<leader>fs", ":Telescope live_grep_args<CR>")
+Nm("<leader>fhs", ":Telescope live_grep_args<CR>-. ") -- include hidden files in search
+Nm("<leader>fes", ":Telescope live_grep_args<CR>-e \\<\\><esc>hi") -- search for exact word
+Nm("<leader>fhes", ":Telescope live_grep_args<CR>-. -e \\<\\><esc>hi") -- search for exact word (include hidden files)
+Nm("<leader>fds", ":Telescope live_grep_args<CR>-g ") -- search in directory (glob)
+Nm("<leader>fhds", ":Telescope live_grep_args<CR>-. -g ") -- search in hidden directory (glob)
+Nm("<leader>fts", ":Telescope live_grep_args<CR>-t ") -- search for file of type
 Nm("<leader>fb", ":Telescope buffers<CR>")
 Nm("<leader>fh", ":Telescope help_tags<CR>")
 

@@ -42,6 +42,9 @@ Nm("<leader>X", ":bd<CR>")
 Nm("<leader>s", ":BufferLineSortByTabs<CR>")
 
 -- Motions
+-- search exact word
+Nm("<leader>/", "/\\<\\><left><left>")
+Nm("<leader>?", "?\\<\\><left><left>")
 Nm("<C-d>", "<C-d>zz")
 Nm("<C-u>", "<C-u>zz")
 Nm("n", "nzzzv")

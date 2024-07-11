@@ -16,7 +16,7 @@ none_ls.setup({
         none_ls.builtins.diagnostics.mypy,
 
         none_ls.builtins.diagnostics.yamllint,
-        none_ls.builtins.formatting.yamlfmt,
+        -- none_ls.builtins.formatting.yamlfmt,
 
         none_ls.builtins.diagnostics.terraform_validate,
         none_ls.builtins.formatting.terraform_fmt,

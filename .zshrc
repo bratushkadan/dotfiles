@@ -2,6 +2,10 @@
 
 eval "$(starship init zsh)"
 
+source $HOME/.env_common
+
+source ~/.zshrc_work
+
 # pyenv
 export PATH="$(pyenv root)/shims:$PATH"
 
@@ -22,19 +26,10 @@ FPATH="/Users/$USER/.zsh/:$FPATH"
 
 ## Vars
 export BROWSER="firefox"
-
-export ARC_MOUNT_PATH="/Users/bratushkadan/.arcadia"
-export JOB_VM=bratushkadan-20-cvm.bootstrap.cloud-preprod.yandex.net
-export OLD_JOB_VM=bratushkadan.sas.yp-c.yandex.net
 #
 export DOTFILES="~/dotfiles"
-
-## Aliases
-alias arcmount="arc mount -m ~/.arcadia -S ~/.store --allow-other"
-alias arcm="arcmount"
-alias arcumnt="arc unmount -f ~/.arcadia"
-# `ya` executable
-alias ya='~/.arcadia/ya'
+#
+export EXTREME_SSD_PATH="/Volumes/Extreme SSD"
 
 # Aliases
 alias k="kubectl"

@@ -2,6 +2,10 @@
 
 eval "$(starship init zsh)"
 
+# https://stackoverflow.com/a/74323525
+autoload -Uz compinit
+compinit
+
 source $HOME/.env_common
 
 source ~/.zshrc_work
@@ -30,10 +34,24 @@ export BROWSER="firefox"
 export DOTFILES="~/dotfiles"
 #
 export EXTREME_SSD_PATH="/Volumes/Extreme SSD"
+export VMS_SSD_PATH="/Volumes/vms"
+
+# set up kubectl
+source <(kubectl completion zsh)
+# short alias to set/show context/namespace (only works for bash and bash-compatible shells, current context to be set before using kn to set namespace)
+alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; } ; f'
+alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'
+alias kpf='kubectl port-forward'
+# set up autocompletion to work with alias "k"; NOTE: works without it in zsh
+# alias k=kubectl
+# complete -o default -F __start_kubectl k
 
 # Aliases
+## k8s
 alias k="kubectl"
 alias ku="k9s"
+alias kctx="kubectx"
+alias kns="kubens"
 # alias python="python3"
 alias pip="pip3"
 

@@ -73,6 +73,9 @@ export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 alias vim=nvim
 alias vi=nvim
 alias v=nvim
+## nvim plugins
+# export NVIM_FUGITIVE_GITLAB_DOMAINS="$NVIM_FUGITIVE_GITLAB_DOMAINS,"
+# example: NVIM_FUGITIVE_GITLAB_DOMAINS="ssh://git@gitlab.gitlab.cntry:12112=https://gitlab.company_name.cntry:3344"
 
 # Software
 

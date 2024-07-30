@@ -138,4 +138,14 @@ require("lazy").setup({
     {
         "sindrets/diffview.nvim",
     },
+    {
+        "tpope/vim-fugitive",
+    },
+    {
+        -- https://vi.stackexchange.com/questions/18265/getting-fugitive-no-gbrowse-handler-found
+        "tpope/vim-rhubarb",
+    },
+    {
+        "shumphrey/fugitive-gitlab.vim",
+    },
 })

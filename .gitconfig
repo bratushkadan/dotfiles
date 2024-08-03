@@ -18,6 +18,30 @@
     rbcommit = commit --amend --no-verify --no-edit
 
 [core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[url "ssh://git@bb.yandexcloud.net/"]
+  insteadOf = https://bb.yandex-team.ru/scm/
+[url "ssh://git@bb.yandexcloud.net/"]
+  insteadOf = https://bb.yandexcloud.net/scm/
+
+[core]
     excludesfile = ~/.gitignore
 [user]
 	email = bratushkadan@gmail.com

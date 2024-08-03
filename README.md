@@ -32,6 +32,12 @@ Initializing symlinks is dead simple:
 
 3. reload starship
 
+## nvim
+
+### Telescope plugin
+
+`brew install ripgrep` - DO NOT install `fd` simultaneously with `rg`, precedence seems to be `fd` > `rg`, Telescope bugs out and `pickers.find_files.hidden = true` option no longer shows hidden files/directories :(
+
 ## `tmux` - terminal multiplexer
 
 ### Steps to set up

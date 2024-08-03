@@ -148,4 +148,7 @@ require("lazy").setup({
     {
         "shumphrey/fugitive-gitlab.vim",
     },
+    {
+        "tommcdo/vim-fubitive",
+    },
 })

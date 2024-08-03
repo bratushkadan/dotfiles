@@ -49,6 +49,18 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 - https://github.com/christoomey/vim-tmux-navigator#restoring-clear-screen-key-binding
 
+## Nix
+
+WIP - experiments
+
+```sh
+nix --extra-experimental-features "nix-command flakes" build .#darwinConfigurations.bratushkadan.system
+```
+
+```sh
+./result/sw/bin/darwin-rebuild switch --flake .
+```
+
 ## Completed ✅
 
 - tmux

@@ -33,7 +33,7 @@ source ~/.zshrc_work
 export PATH="$(pyenv root)/shims:$PATH"
 
 # go
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # terraform
 export TFENV_REMOTE='https://hashicorp-releases.yandexcloud.net/'

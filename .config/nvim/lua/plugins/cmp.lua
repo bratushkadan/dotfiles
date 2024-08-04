@@ -2,6 +2,8 @@
 
 vim.api.nvim_command("autocmd BufRead,BufNewFile *.sls set filetype=sls")
 
+vim.lsp.set_log_level("off") -- "debug"
+
 -- Set up nvim-cmp.
 local cmp = require("cmp")
 cmp.setup({

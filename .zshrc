@@ -8,6 +8,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+# spoof DPI for avoiding YT slowing
+export PATH=$PATH:~/.spoof-dpi/bin
+
 # history opts
 
 HISTFILE="$HOME/.zsh_history"

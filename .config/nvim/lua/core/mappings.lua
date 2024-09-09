@@ -39,6 +39,9 @@ Nm("<leader>fts", ":Telescope live_grep_args<CR>-t ") -- search for file of type
 Nm("<leader>fb", ":Telescope buffers<CR>")
 Nm("<leader>fh", ":Telescope help_tags<CR>")
 
+-- GBrowse
+Vm("<leader>G", ":GBrowse<CR>") -- open in browser
+
 -- Bufferline and buffer mappings
 -- set('n', '<leader>x', ':BufferLinePickClose<CR>')
 Nm("<leader>{", ":BufferLineCyclePrev<CR>")

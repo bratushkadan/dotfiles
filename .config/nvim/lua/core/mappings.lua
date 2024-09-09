@@ -44,10 +44,11 @@ Vm("<leader>G", ":GBrowse<CR>") -- open in browser
 
 -- Bufferline and buffer mappings
 -- set('n', '<leader>x', ':BufferLinePickClose<CR>')
-Nm("<leader>{", ":BufferLineCyclePrev<CR>")
-Nm("<leader>}", ":BufferLineCycleNext<CR>")
+Nm("<S-Left>", ":BufferLineCyclePrev<CR>")
+Nm("<S-Right>", ":BufferLineCycleNext<CR>")
+Nm("<leader>CO", ":BufferLineCloseOthers<CR>")
 Nm("<leader>M", ":BufferLinePick<CR>")
-Nm("<leader>X", ":bd<CR>")
+Nm("<leader>x", ":bd<CR>")
 Nm("<leader>s", ":BufferLineSortByTabs<CR>")
 
 -- Motions

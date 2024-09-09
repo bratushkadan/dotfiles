@@ -1,5 +1,7 @@
 # Starship shell
 
+export PATH="/usr/local/bin:$PATH"
+
 eval "$(starship init zsh)"
 
 # zsh opts
@@ -9,7 +11,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # spoof DPI for avoiding YT slowing
-export PATH=$PATH:~/.spoof-dpi/bin
+export PATH="$PATH:$HOME/.spoof-dpi/bin"
 
 # history opts
 
@@ -138,8 +140,8 @@ alias v=nvim
 # Software
 
 ## sdkman - java version manager
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Obsidian
 export OBSIDIAN_VAULT=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault

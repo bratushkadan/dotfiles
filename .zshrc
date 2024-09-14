@@ -35,7 +35,7 @@ source $HOME/.env_common
 source ~/.zshrc_work
 
 # pyenv
-export PATH="$(pyenv root)/shims:$PATH"
+# export PATH="$(pyenv root)/shims:$PATH"
 
 # go
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -149,7 +149,7 @@ export OBSIDIAN_CONF=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/
 export OBSIDIAN_SNIPPETS=$OBSIDIAN/snippets
 
 ## python3
-export PYTHONPATH=$PYTHONPATH:`pwd`;
+# export PYTHONPATH=$PYTHONPATH:`pwd`;
 
 ## Go
 export GOPATH=~/go

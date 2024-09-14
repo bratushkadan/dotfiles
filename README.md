@@ -1,5 +1,13 @@
 # bratushkadan's dotfiles
 
+## Linux
+
+### Alacritty fonts
+
+```bash
+cp ./fonts/UbuntuMonoNerdFont-Regular.ttf /usr/local/share/fonts/
+```
+
 ## OSX
 
 ### Brew

@@ -23,6 +23,8 @@ vim.opt.scrolloff = 8
 -- Additional settings
 vim.opt.splitright = true -- vertical splits are rendered to the right
 vim.opt.splitbelow = true -- horizontal splits are rendered below
+-- "unnamedplus" clipboard option for SHARED clipboard with the system requires "xclip" package to be installed:
+-- sudo apt install xclip
 vim.opt.clipboard = "unnamedplus" -- SHARED clipboard with the system
 -- opt.fixeol = false -- disable (?)
 -- opt.completeopt = 'menuone,noselect' -- built-in autocomplete

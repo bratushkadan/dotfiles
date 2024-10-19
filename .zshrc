@@ -92,9 +92,6 @@ FPATH="/Users/$USER/.zsh/:$FPATH"
 export BROWSER="firefox"
 #
 export DOTFILES="~/dotfiles"
-#
-export EXTREME_SSD_PATH="/Volumes/Extreme SSD"
-export VMS_SSD_PATH="/Volumes/vms"
 
 # set up kubectl
 source <(kubectl completion zsh)
@@ -140,13 +137,13 @@ alias v=nvim
 # Software
 
 ## sdkman - java version manager
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Obsidian
-export OBSIDIAN_VAULT=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault
-export OBSIDIAN_CONF=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault/.obsidian
-export OBSIDIAN_SNIPPETS=$OBSIDIAN/snippets
+# export OBSIDIAN_VAULT=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault
+# export OBSIDIAN_CONF=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault/.obsidian
+# export OBSIDIAN_SNIPPETS=$OBSIDIAN/snippets
 
 ## python3
 # export PYTHONPATH=$PYTHONPATH:`pwd`;
@@ -163,4 +160,3 @@ if [ -f '/Users/bratushkadan/yandex-cloud/completion.zsh.inc' ]; then source '/U
 # source $NVM_DIR/nvm.sh;
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-

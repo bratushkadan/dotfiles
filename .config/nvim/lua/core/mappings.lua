@@ -60,3 +60,6 @@ Nm("<C-u>", "<C-u>zz")
 Nm("n", "nzzzv")
 Nm("N", "Nzzzv")
 Vm("<leader>p", '"_dP')
+
+-- Go
+Nm("<leader>ctx", "actx context.Context, ")

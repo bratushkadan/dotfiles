@@ -11,7 +11,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # spoof DPI for avoiding YT slowing
-export PATH="$PATH:$HOME/.spoof-dpi/bin"
+# export PATH="$PATH:$HOME/.spoof-dpi/bin"
 
 # history opts
 

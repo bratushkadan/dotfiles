@@ -31,11 +31,17 @@ Then reboot the system
 First things first, install:
 1. Brew
 
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 2. Run the command:
 
 ```bash
-brew bundle
+/opt/homebrew/bin/brew bundle
 ```
+
+(brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file) 
 
 3. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
 

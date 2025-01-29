@@ -41,7 +41,10 @@ First things first, install:
 /opt/homebrew/bin/brew bundle
 ```
 
-(brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file) 
+NOTE(\#1): (brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file).
+NOTE(\#2): `vagrant` and `vagrant-vmware-utility` casks installation will fail.
+NOTE(\#3): Mac App Store apps will not be loaded until you sing in to your Apple ID account.
+NOTE(\#4): VSCode extensions installation will fail
 
 3. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
 

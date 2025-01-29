@@ -124,7 +124,6 @@ cask "yandex-cloud-cli"
 cask "yandex-disk"
 cask "zoom"
 mas "Elpy", id: 1440013765
-mas "hidemy.name VPN", id: 1200692581
 mas "Keynote", id: 409183694
 mas "Money Flow", id: 900890647
 mas "Numbers", id: 409203825

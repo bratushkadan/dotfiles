@@ -35,16 +35,26 @@ First things first, install:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+Activate the shell (no need to add this line to the `.zprofile`, because this file will be symlinked from this repo once `stow .` will be run.):
+```bash
+eval $(/opt/homebrew/bin/brew shellenv)
+```
+
 2. Run the command:
 
 ```bash
-/opt/homebrew/bin/brew bundle
+brew bundle
 ```
 
 NOTE(\#1): (brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file).
 NOTE(\#2): `vagrant` and `vagrant-vmware-utility` casks installation will fail.
 NOTE(\#3): Mac App Store apps will not be loaded until you sing in to your Apple ID account.
-NOTE(\#4): VSCode extensions installation will fail
+
+If VSCode extensions installation fails, install only the VSCode extensions:
+
+```bash
+cat Brewfile| grep ^vscode | brew bundle --file=-
+```
 
 3. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
 

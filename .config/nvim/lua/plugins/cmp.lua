@@ -63,10 +63,9 @@ local lspconfig_util = require("lspconfig.util")
 local lspconfig = require("lspconfig")
 local servers = {
     "bashls",
-    "bufls",
-    "tsserver",
+    "buf_ls",
+    "ts_ls",
     "jsonls",
-    "jinja_lsp",
     "helm_ls",
     "sqls",
     "ansiblels",

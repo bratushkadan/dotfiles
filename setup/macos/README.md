@@ -26,29 +26,40 @@ Then reboot the system
 
 ## Software
 
-### Manual install (Critical)
+### Install
 
 First things first, install:
 1. Brew
 
-### Install from the configuration
+2. Run the command:
 
-Install from Brewfile.
+```bash
+brew bundle
+```
+
+3. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
 
 ### Manual install (Secondary)
 
+#### Install via tools
+
+Install Terraform:
+```bash
+tfenv install 1.4.1
+tfenv use 1.4.1
+```
+
+#### Install via DMGs
+
 - Obsidian
-- Elpy - Nature Sounds Mixer 🌿🍃
 - Yandex Music
-- Toggl Track
-- TickTick
-- Money Flow
 - Giphy Capture
 
 ---
 
 Situational:
 - UTM - open source virtualization tool with UI
+- Time Out (Mac App Store) - tool for enabling periodical auto breaks from the screen to help eyes get rest
 
 ### Configure Software
 
@@ -56,6 +67,8 @@ Situational:
 
 Add custom icons.
 **TODO:**
+
+## Directory Structure & Finder Bookmarks
 
 ## Tips & Tricks
 
@@ -66,3 +79,15 @@ Add custom icons.
 `brew bundle dump -f` writes current system's brew state into a file, `brew bundle -v` installs the dependencies listed in the *Brewfile*.
 
 cp ./fonts/nerd/UbuntuMonoNerdFont-Regular.ttf /usr/local/share/fonts/
+
+### `mas` – CLI for Mac App Store
+
+List installed Mac App Store Apps:
+```bash
+mas list
+```
+
+Get Mac App Store installed applications without `mas` CLI tool installed (run from the dotfiles repository root):
+```bash
+cat Brewfile | grep ^mas
+```

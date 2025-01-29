@@ -6,19 +6,17 @@ Dotfiles are managed via GNU Stow – the "symlink farm manager". Its largest be
 
 Initializing symlinks is dead simple:
 
-1. `git clone git@github.com:bratushkadan/dotfiles.git ~/dotfiles`
+1. `git clone git@github.com:bratushkadan/dotfiles.git ~/dotfiles && cd ~/dotfiles`
 2. `stow .`
 
 ### dependencies
 
 - git
-- stow (included in Brewfile for OSX)
+- stow (included in this repo's Brewfile)
 
 ## [MacOS / OSX](./setup/macos/README.md)
 
-### Brew
-
-For *Brewfile* description and usage, see [MacOS / OSX](./setup/macos/README.md).
+### [Brew / BrewFile](./setup/macos/README.md#brew--brewfile)
 
 ## Tools
 

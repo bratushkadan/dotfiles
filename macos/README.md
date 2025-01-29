@@ -1,19 +1,47 @@
-# My default settings
+# Setup MacOS
 
-## Set programatically
+## Settings
 
-## Set manually
+### 1. Set programatically
 
-### Settings > Displays
+Apply settings [from the file](./my-default-settings.bash).
 
-#### Automatically adjust brightness -> `Off`
+Then reboot the system
 
-#### Night Shift
+### 2. Set manually
+
+#### Settings > Displays
+
+##### Automatically adjust brightness -> `Off`
+
+##### Night Shift
 
 - Schedule > Custom
 - From 19:30 to 06:00
 - Color temperature -> `More warm`
 
-### Settings > Lock Screen > Turn Display off on battery when inactive -> `For 5 minutes`
+#### Settings > Lock Screen > Turn Display off on battery when inactive -> `For 5 minutes`
 
-### Settings > Keyboard > Turn keyboard backlight off after inactivity -> `after 10 seconds`
+#### Settings > Keyboard > Turn keyboard backlight off after inactivity -> `after 10 seconds`
+
+## Software
+
+### Manual install
+
+First things first, install:
+1. Brew
+2. Alacritty
+
+Secondary:
+- Yandex Music
+
+### Install from the configuration
+
+Install from Brewfile.
+
+### Configure Software
+
+#### Draw.io
+
+Add custom icons.
+**TODO:**

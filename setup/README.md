@@ -2,17 +2,19 @@
 
 ## Common Steps (Required)
 
+### Clone the repository
+
 ```sh
-git clone git@github.com:bratushkadan/dotfiles.git ~/dotfiles
+git clone git@github.com:bratushkadan/dotfiles.git $HOME/dotfiles && cd $HOME/dotfiles
 ```
+
+### Install fonts
+
+Run `./fonts/install` from the *dotfiles* repo root.
 
 ## [MacOS / OSX](./macos/README.md)
 
 ## Common Steps (Secondary)
-
-### Install fonts
-
-Run `./fonts/nerd` from the *dotfiles* repo root.
 
 ### Copy ssh keys
 

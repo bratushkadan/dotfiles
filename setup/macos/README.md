@@ -4,9 +4,11 @@
 
 ### 1. Set programatically
 
-Apply settings [from the file](./my-default-settings.bash).
+```zsh
+./set-default-settings
+```
 
-Then reboot the system
+Reboot the system
 
 ### 2. Set manually
 
@@ -26,6 +28,12 @@ Then reboot the system
 
 ## Software
 
+### Requirements
+
+Sign in to your Apple ID account.
+
+NOTE(\#1): Mac App Store apps (from `mas` sections inside Brewfile) will not be loaded/installed unless you're signed in to your Apple ID account.
+
 ### Install
 
 First things first, install:
@@ -35,10 +43,12 @@ First things first, install:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Activate the shell (no need to add this line to the `.zprofile`, because this file will be symlinked from this repo once `stow .` will be run.):
+Activate the shell:
 ```bash
 eval $(/opt/homebrew/bin/brew shellenv)
 ```
+
+NOTE(\#2): (brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file that includes brew activation).
 
 2. Run the command:
 
@@ -46,17 +56,19 @@ eval $(/opt/homebrew/bin/brew shellenv)
 brew bundle
 ```
 
-NOTE(\#1): (brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file).
-NOTE(\#2): `vagrant` and `vagrant-vmware-utility` casks installation will fail.
-NOTE(\#3): Mac App Store apps will not be loaded until you sing in to your Apple ID account.
+NOTE(\#3): `vagrant` and `vagrant-vmware-utility` casks installation will fail unless VPN is turned on.
 
 If VSCode extensions installation fails, install only the VSCode extensions:
 
 ```bash
-cat Brewfile| grep ^vscode | brew bundle --file=-
+cat Brewfile | grep ^vscode | brew bundle --file=-
 ```
 
-3. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
+3. [Install fonts](../README.md#install-fonts).
+
+4. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
+
+**Note**: first zsh launch will be unsuccessful, the error will look similarly to `stat /Users/$USER/.zcompdump: stat: No such file or directory`.
 
 ### Manual install (Secondary)
 

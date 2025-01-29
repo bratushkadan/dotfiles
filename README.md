@@ -22,6 +22,18 @@ Initializing symlinks is dead simple:
 
 ### nvim
 
+Once [`stow .` has been run](./#dotfiles-arrangement), [Lazy](https://github.com/folke/lazy.nvim) plugin manager (`:Lazy` in nvim) will automatically download all the listed dependencies nvim dependencies.
+
+Update plugins via Lazy:
+
+```bash
+:Lazy update
+```
+
+[Mason](https://github.com/williamboman/mason.nvim) (`:Mason`) dependencies will be installed automatically as well.
+
+NOTE: Terraform language server download will fail, as files are fetched from Hashicorp's CDN.
+
 #### Plugins
 
 Describe here the plugin update/installation process.
@@ -31,18 +43,16 @@ Describe here the plugin update/installation process.
 `brew install ripgrep` - DO NOT install `fd` simultaneously with `rg`, precedence seems to be `fd` > `rg`, Telescope bugs out and `pickers.find_files.hidden = true` option no longer shows hidden files/directories :(
 Upd Jan 29, 2025 - no longer relevant, but be cautious.
 
-### `tmux` - terminal multiplexer
+### `tmux`
+
+Terminal multiplexer.
 
 #### Steps to set up
 
-1. (✅ installed automatically via brew) Install [tpm](https://github.com/tmux-plugins/tpm):
-
-```shell
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-2. (✅ configuration is symlinked via Stow) Run `mv .tmux.conf ~/` from the repository's root;
-3. Run `tmux` and press `C-a + I` (capital I, after keys rebound) to install plugins;
+1. (✅ installed automatically via brew) install *tmux*;
+2. (✅ installed automatically via brew) install [`tpm`](https://github.com/tmux-plugins/tpm):
+3. (✅ configuration is symlinked via Stow) move from the repository root `.tmux.conf` to home directory: `mv .tmux.conf $HOME/`:
+4. Run `tmux` and press `C-a + I` (capital I, after keys rebound) to install plugins;
 
 #### Useful `tmux` repositories
 

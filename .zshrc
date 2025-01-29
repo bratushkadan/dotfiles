@@ -142,8 +142,8 @@ alias v=nvim
 # export PYTHONPATH=$PYTHONPATH:`pwd`;
 
 ## Yandex Cloud CLI
-if [ -f '/Users/bratushkadan/yandex-cloud/path.bash.inc' ]; then source '/Users/bratushkadan/yandex-cloud/path.bash.inc'; fi
-if [ -f '/Users/bratushkadan/yandex-cloud/completion.zsh.inc' ]; then source '/Users/bratushkadan/yandex-cloud/completion.zsh.inc'; fi
+if [ -f "/Users/${USER}/yandex-cloud/path.bash.inc" ]; then source "/Users/${USER}/yandex-cloud/path.bash.inc"; fi
+if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/${USER}/yandex-cloud/completion.zsh.inc"; fi
 
 ## nvm - nodejs version manager
 # export NVM_DIR=$HOME/.nvm;

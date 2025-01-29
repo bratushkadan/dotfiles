@@ -1,6 +1,5 @@
 # Software
 
-
 ## Configure
 
 ### Kubernetes
@@ -26,6 +25,19 @@ chmod 600 ~/.ssh/id_rsa
 chmod 644 ~/.ssh/id_rsa.pub
 chmod 644 ~/.ssh/known_hosts
 ```
+
+### Yandex Cloud CLI (`yc`)
+
+Setup zsh completion:
+```bash
+cat >"/Users/${USER}/yandex-cloud/path.bash.inc" <<EOF
+cli_dir="\$(cd "\$(dirname "\${(%):-%N}")" && pwd)"
+bin_path="\${cli_dir}/bin"
+export PATH="\${bin_path}:\${PATH}"
+EOF
+yc completion zsh > "/Users/${USER}/yandex-cloud/completion.zsh.inc
+```
+
 
 ### Draw.io
 

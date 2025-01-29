@@ -14,6 +14,8 @@ Run `./fonts/install` from the *dotfiles* repo root.
 
 ## [MacOS / OSX](./macos/README.md)
 
+## [Setup Software](./software/README.md)
+
 ## Common Steps (Secondary)
 
 ### Copy ssh keys

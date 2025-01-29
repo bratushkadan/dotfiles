@@ -26,18 +26,29 @@ Then reboot the system
 
 ## Software
 
-### Manual install
+### Manual install (Critical)
 
 First things first, install:
 1. Brew
-2. Alacritty
-
-Secondary:
-- Yandex Music
 
 ### Install from the configuration
 
 Install from Brewfile.
+
+### Manual install (Secondary)
+
+- Obsidian
+- Elpy - Nature Sounds Mixer 🌿🍃
+- Yandex Music
+- Toggl Track
+- TickTick
+- Money Flow
+- Giphy Capture
+
+---
+
+Situational:
+- UTM - open source virtualization tool with UI
 
 ### Configure Software
 

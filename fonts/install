@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+os="$(uname)"
+case $os in
+    "Linux")
+        cp ./fonts/nerd/*.ttf /usr/local/share/fonts/
+;;
+    "Darwin")
+        cp ./fonts/nerd/*.ttf ~/Library/Fonts/
+;;
+    *)
+        echo "Error: could not copy fonts. OS is neither Linux, nor Darwin." >&2
+        exit 1
+esac
+

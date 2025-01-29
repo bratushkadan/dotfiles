@@ -20,20 +20,6 @@ Initializing symlinks is dead simple:
 
 For *Brewfile* description and usage, see [MacOS / OSX](./setup/macos/README.md).
 
-## Linux
-
-<details>
-
-<summary>Desktop Linux Settings</summary>
-
-### Alacritty fonts
-
-```bash
-cp ./fonts/UbuntuMonoNerdFont-Regular.ttf /usr/local/share/fonts/
-```
-
-</details>
-
 ## Tools
 
 ### nvim

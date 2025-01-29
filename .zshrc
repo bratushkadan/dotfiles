@@ -10,9 +10,6 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# spoof DPI for avoiding YT slowing
-# export PATH="$PATH:$HOME/.spoof-dpi/bin"
-
 # history opts
 
 HISTFILE="$HOME/.zsh_history"
@@ -30,15 +27,16 @@ else
   compinit -C
 fi
 
-source $HOME/.env_common
+[ -f "${HOME}/.env_common" ] && source "${HOME}/.env_common"
 
-source ~/.zshrc_work
+[ -f "${HOME}/.env_common" ] && source "${HOME}/.zshrc_work"
 
 # pyenv
 # export PATH="$(pyenv root)/shims:$PATH"
 
 # go
-export PATH="$PATH:$(go env GOPATH)/bin"
+export GOPATH="$(go env GOPATH)"
+export PATH="$PATH:$GOPATH/bin"
 
 # terraform
 export TFENV_REMOTE='https://hashicorp-releases.yandexcloud.net/'
@@ -114,11 +112,6 @@ alias kns="kubens"
 # alias python="python3"
 alias pip="pip3"
 
-## docker
-# alias dockpsids="docker ps -a | awk '{if (NR > 1) { print $1 }}'"
-# alias docrma="dockpsids | xargs docker rm -f"
-
-
 # Nvim
 
 ## Use Neovim as "preferred editor"
@@ -147,9 +140,6 @@ alias v=nvim
 
 ## python3
 # export PYTHONPATH=$PYTHONPATH:`pwd`;
-
-## Go
-export GOPATH=~/go
 
 ## Yandex Cloud CLI
 if [ -f '/Users/bratushkadan/yandex-cloud/path.bash.inc' ]; then source '/Users/bratushkadan/yandex-cloud/path.bash.inc'; fi

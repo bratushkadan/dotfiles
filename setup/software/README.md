@@ -30,12 +30,13 @@ chmod 644 ~/.ssh/known_hosts
 
 Setup zsh completion:
 ```bash
+mkdir -p "/Users/${USER}/yandex-cloud"
 cat >"/Users/${USER}/yandex-cloud/path.bash.inc" <<EOF
 cli_dir="\$(cd "\$(dirname "\${(%):-%N}")" && pwd)"
 bin_path="\${cli_dir}/bin"
 export PATH="\${bin_path}:\${PATH}"
 EOF
-yc completion zsh > "/Users/${USER}/yandex-cloud/completion.zsh.inc
+yc completion zsh > "/Users/${USER}/yandex-cloud/completion.zsh.inc"
 ```
 
 

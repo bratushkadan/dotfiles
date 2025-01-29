@@ -1,5 +1,6 @@
 .git
-fonts/nerd
+fonts
 setup
+Brewfile
 ^/README.*
 

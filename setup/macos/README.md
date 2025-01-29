@@ -92,13 +92,6 @@ Situational:
 - UTM - open source virtualization tool with UI
 - Time Out (Mac App Store) - tool for enabling periodical auto breaks from the screen to help eyes get rest
 
-### Configure Software
-
-#### Draw.io
-
-Add custom icons.
-**TODO:**
-
 ## Directory Structure & Finder Bookmarks
 
 ## Tips & Tricks

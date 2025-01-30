@@ -14,11 +14,9 @@ Run `./fonts/install` from the *dotfiles* repo root.
 
 ## [MacOS / OSX](./macos/README.md)
 
+Basic OSX OS configuring.
+
 ## [Setup Software](./software/README.md)
 
-## Common Steps (Secondary)
-
-### Copy ssh keys
-
-Or generate new ssh keys and add them to the virtual machines/git repositories that only let me in by my old ssh keys.
+Setup instructions to do after basic OS configuring.
 

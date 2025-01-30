@@ -29,7 +29,7 @@ fi
 
 [ -f "${HOME}/.env_common" ] && source "${HOME}/.env_common"
 
-[ -f "${HOME}/.env_common" ] && source "${HOME}/.zshrc_work"
+[ -f "${HOME}/.zshrc_work" ] && source "${HOME}/.zshrc_work"
 
 # pyenv
 # export PATH="$(pyenv root)/shims:$PATH"

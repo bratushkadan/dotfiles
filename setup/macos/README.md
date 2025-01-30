@@ -91,6 +91,8 @@ tfenv use 1.4.1
 Situational:
 - UTM - open source virtualization tool with UI
 - Time Out (Mac App Store) - tool for enabling periodical auto breaks from the screen to help eyes get rest
+- Amethyst - Window/Tile Manager for MacOS
+- Orbstack - fast containerization solution
 
 ## Directory Structure & Finder Bookmarks
 

@@ -15,14 +15,36 @@ Reboot the system
 #### Finder
 
 1. Click on the toolbar (e.g., search icon).
-2. Click "`Customize Toolbar...`".
-3. Replace `View` option on the toolbar with the `Path` option in the Drag menu.
+1. Click "`Customize Toolbar...`".
+1. Replace `View` option on the toolbar with the `Path` option in the Drag menu.
 
 #### Settings > Keyboard
 
+##### Text Input > Input Sources
+
+1. Add the required layouts.
+
+##### Keyboard Shortcuts... > Input Sources
+
+1. Change the "`Select next source in Input menu`" to `^Space`;
+1. Turn off the "`Select the previous input source`".
+
+##### Keyboard Shortcuts... > Spotlight
+
+1. Check off the "`Show Spotlight search`" option;
+1. Check off the "`Show Finder search window`" option.
+
 ##### Keyboard Shortcuts... > Modifier Keys
 
-- Set "Caps Lock key" to "`No Action`" for my secondary (external) keyboard.
+1. Set "Caps Lock key" to "`No Action`" for my secondary (external) keyboard.
+
+#### Settings > Sounds
+
+##### Set Alert Sound to `Bubble`
+
+#### Settings > Accessibility
+
+**Uncheck** every option except the "`Color Filters`".
 
 #### Settings > Notifications
 

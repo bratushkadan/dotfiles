@@ -12,6 +12,22 @@ Reboot the system
 
 ### 2. Set manually
 
+#### Finder
+
+1. Click on the toolbar (e.g., search icon).
+2. Click "`Customize Toolbar...`".
+3. Replace `View` option on the toolbar with the `Path` option in the Drag menu.
+
+#### Settings > Keyboard
+
+##### Keyboard Shortcuts... > Modifier Keys
+
+- Set "Caps Lock key" to "`No Action`" for my secondary (external) keyboard.
+
+#### Settings > Notifications
+
+##### Skotty > Off
+
 #### Settings > Displays
 
 ##### Automatically adjust brightness -> `Off`
@@ -31,6 +47,8 @@ Reboot the system
 ### Requirements
 
 Sign in to your Apple ID account.
+
+Turn on iCloud sync to add device to the Apple ID account. In the iCloud section, turn on the "Sync Passwords" option.
 
 NOTE(\#1): Mac App Store apps (from `mas` sections inside Brewfile) will not be loaded/installed unless you're signed in to your Apple ID account.
 
@@ -89,6 +107,7 @@ tfenv use 1.4.1
 ---
 
 Situational:
+- [TinkerTool](https://www.bresink.com/osx/0TinkerTool/download.php) - an application that gives you access to additional preference settings Apple has built into macOS.
 - UTM - open source virtualization tool with UI
 - Time Out (Mac App Store) - tool for enabling periodical auto breaks from the screen to help eyes get rest
 - Amethyst - Window/Tile Manager for MacOS

@@ -24,5 +24,123 @@ defaults write com.apple.HIToolbox AppleFnUsageType -int 2
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # -------------
+### Sounds
+# set Alert Sound to Bubble
+defaults write com.apple.systemsound com.apple.sound.beep.sound -string "/System/Library/Sounds/Bubble.aiff"
+
+### Desktop & Dock
+# Windows > Close windows when quitting and application
+defaults write -g NSQuitAlwaysKeepsWindows -bool true
+# The size of the Dock (the icon size)
+defaults write com.apple.dock tilesize -int 55
+# The Dock magnification size (the size icons grow to when hovered over if magnification is enabled)
+# defaults write com.apple.dock largesize -int 55
+# The Dock magnification is turned on/off
+defaults write com.apple.dock magnification -bool false
+defaults write com.apple.dock autohide -bool true
+# Faster Dock Hiding
+# Remove the delay from hiding and showing your dock
+# https://www.reddit.com/r/MacOS/comments/w734vk/remove_the_delay_from_hiding_and_showing_your_dock/
+defaults write com.apple.dock autohide-delay -float 0;
+defaults write com.apple.dock autohide-time-modifier -int 0;
+killall Dock
+
+### Scroll-Reverser
+#
+# Reverse trackpad: false
+defaults write com.pilotmoon.scroll-reverser ReverseTrackpad -bool false
+# Launch at startup: true
+defaults write com.pilotmoon.scroll-reverser StartAtLogin -int 1
+
+### Mouse
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 1.5
+
+### Keyboard
+## Text Input > Input Sources > Edit...
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSTextAutoCompletionEnabled -bool true
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+## Text Input > Input Sources
+# English and Russian
+# TODO: Delete me | I checked whether this works by deleting "Russian" layout, should occur on system startup
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
+'{
+  "InputSourceKind" = "Keyboard Layout";
+  "KeyboardLayout ID" = 0;
+  "KeyboardLayout Name" = "U.S.";
+}' \
+'{
+  "InputSourceKind" = "Keyboard Layout";
+  "KeyboardLayout ID" = 19456;
+  "KeyboardLayout Name" = "Russian";
+}' \
+'{
+  "Bundle ID" = "com.apple.CharacterPaletteIM";
+  "InputSourceKind" = "Non Keyboard Input Method";
+}' \
+'{
+  "Bundle ID" = "com.apple.PressAndHold";
+  "InputSourceKind" = "Non Keyboard Input Method";
+}'
+### Keyboard Shortcuts...
+## "Input Sources"
+# @ Explanation for parameters
+# - 32 is the key code for the Space key.
+# - 49 is a system-specific identifier for a key-combination.
+# - 262144 represents the Control modifier.
+# - 786432 represents the Control+Option modifier.
+# Select previous input source
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "
+   {
+       enabled = 0;
+       value = {
+           parameters = (32, 49, 786432);
+           type = 'standard';
+       };
+   }"
+
+# Select next input source
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "
+   {
+       enabled = 1;
+       value = {
+           parameters = (32, 49, 262144);
+           type = 'standard';
+       };
+   }"
+## "Spotlight"
+# Disable "Show Spotlight search"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "
+   {
+       enabled = 0;
+       value = {
+           parameters = (32, 49, 262144);
+           type = 'standard';
+       };
+   }"
+# Disable "Show Finder search window"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 65 "
+   {
+       enabled = 0;
+       value = {
+           parameters = (32, 49, 786432);
+           type = 'standard';
+       };
+   }"
+
+### Finder
+# Set "New Finder windows show" to ~/Downloads
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Downloads/"
+
+### Accessibility
+# Setup color macros filter
+defaults write com.apple.UniversalAccess triplePressToToggle -bool true;
+
+# Remove blinking Input Source/Shift switch icons in apps
+# https://yablyk.com/837958-kak-ubrat-znachok-pereklyucheniya-yazyka-vozle-kursora-pri-nabore-teksta-v-macos/
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist redesigned_text_cursor -dict-add Enabled -bool NO
+# -------------
 ### Create directories
 mkdir -p $HOME/projects/{cloud,devops,go}

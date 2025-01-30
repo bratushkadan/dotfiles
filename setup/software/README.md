@@ -74,6 +74,17 @@ My settings include some such as `*telemetry*: false` in `about:config`>
 4. Open this folder as a Vault on the new device.
 5. Force `remotely-save` sync. If Vault directory is a directory created from a local backup, full sync with the remote source **will not be required**.
 
+### VSCode
+
+#### Automatic Sync via Cloud (prefered)
+
+[Settings Sync (official VSCode article)](https://code.visualstudio.com/docs/editor/settings-sync) 
+
+#### Manual Sync via Profile Exporting
+
+1. Manual Profile Backup: press `Cmd + Shift + P` (MacOS) and type in "`Export Profile`".
+1. On another device, use Import Profile in the Command Palette to apply the settings.
+
 ### Draw.io
 
 Add custom icons.

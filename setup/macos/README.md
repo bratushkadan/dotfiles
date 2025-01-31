@@ -18,6 +18,12 @@ Reboot the system
 1. Click "`Customize Toolbar...`".
 1. Replace `View` option on the toolbar with the `Path` option in the Drag menu.
 
+#### Settings > Desktop & Dock
+
+##### Hot Corners...
+
+Disable.
+
 #### Settings > Keyboard
 
 ##### Text Input > Input Sources

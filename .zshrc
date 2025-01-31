@@ -129,6 +129,10 @@ alias v=nvim
 
 # Software
 
+## tfenv - Terraform installations manager: https://github.com/tfutils/tfenv
+# Bypass Terraform geo restrictions:
+export TFENV_REMOTE=https://hashicorp-releases.yandexcloud.net
+
 ## sdkman - java version manager
 # export SDKMAN_DIR="$HOME/.sdkman"
 # [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

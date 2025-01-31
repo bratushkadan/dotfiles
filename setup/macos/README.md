@@ -122,6 +122,7 @@ cat Brewfile | grep ^vscode | brew bundle --file=-
 
 Install Terraform:
 ```bash
+mkdir -p ~/.terraform.d/plugins
 tfenv install 1.4.1
 tfenv use 1.4.1
 ```

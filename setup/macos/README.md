@@ -118,13 +118,30 @@ cat Brewfile | grep ^vscode | brew bundle --file=-
 
 ### Manual install (Secondary)
 
-#### Install via tools
+#### Terraform
 
 Install Terraform:
 ```bash
 tfenv install 1.4.1
 tfenv use 1.4.1
 ```
+
+#### Install Vagrant
+
+[Vagrant for arm64 macs | Habr article](https://habr.com/ru/companies/bar/articles/708950/)
+
+[VMWare license keys (for test purposes only)](https://gist.github.com/ezracb/de0f33ca55e340f43328467e6787b7a9)
+
+```bash
+wget https://download3.vmware.com/software/FUS-TP2023/VMware-Fusion-e.x.p-22068932_universal.dmg
+```
+
+##### Official Vagrant Boxes
+
+[Official Vagrant VM boxes](https://portal.cloud.hashicorp.com/vagrant/discover?architectures=arm64&providers=vmware_desktop)
+
+My favorite boxes:
+- [bento/ubuntu-24.04](https://portal.cloud.hashicorp.com/vagrant/discover/bento/ubuntu-24.04)
 
 #### Install via DMGs
 

@@ -154,3 +154,7 @@ if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/
 # source $NVM_DIR/nvm.sh;
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for YDB CLI.
+if [ -f '/Users/bratushkadan/ydb/path.bash.inc' ]; then source '/Users/bratushkadan/ydb/path.bash.inc'; fi
+

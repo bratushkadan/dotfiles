@@ -79,6 +79,10 @@ alias lst="eza --tree --level=2"
 eval "$(zoxide init zsh --cmd j)"
 alias cd="j"
 
+
+# Utility aliases
+alias cpwd="pwd | pbcopy"
+
 # Work
 
 ## Setup

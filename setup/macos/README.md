@@ -153,6 +153,7 @@ My favorite boxes:
 ---
 
 Situational:
+- [BrainFM](https://www.brain.fm/download) – Science-backed Neuro-music
 - UTM - open source virtualization tool with UI
 - Time Out (Mac App Store) - tool for enabling periodical auto breaks from the screen to help eyes get rest
 - Amethyst - Window/Tile Manager for MacOS

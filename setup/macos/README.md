@@ -50,13 +50,15 @@ Disable.
 
 ##### Set Alert Sound to `Bubble`
 
-#### Settings > Accessibility
+#### Settings > Accessibility > Shortcut
 
 **Uncheck** every option except the "`Color Filters`".
 
 #### Settings > Notifications
 
 ##### Skotty > Off
+
+##### Mail > Off for *Sounds*
 
 #### Settings > Displays
 
@@ -65,7 +67,7 @@ Disable.
 ##### Night Shift
 
 - Schedule > Custom
-- From 19:30 to 06:00
+- From 19:30 to 05:30
 - Color temperature -> `More warm`
 
 #### Settings > Lock Screen > Turn Display off on battery when inactive -> `For 5 minutes`
@@ -125,8 +127,8 @@ cat Brewfile | grep ^vscode | brew bundle --file=-
 Install Terraform:
 ```bash
 mkdir -p ~/.terraform.d/plugins
-tfenv install 1.4.1
-tfenv use 1.4.1
+tfenv install 1.5.7
+tfenv use 1.5.7
 ```
 
 #### Install Vagrant
@@ -150,7 +152,7 @@ My favorite boxes:
 
 - Obsidian
 - Yandex Music
-- Giphy Capture
+- Giphy Capture: `mas search giphy` & `mas install <id>`
 
 ---
 

@@ -1,5 +1,7 @@
 # Setup MacOS
 
+The **very first thing to do** is install Brew and install packages from Brewfile!
+
 ## Settings
 
 ### 1. Set programatically

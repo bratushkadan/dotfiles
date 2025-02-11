@@ -153,7 +153,6 @@ My favorite boxes:
 ---
 
 Situational:
-- [TinkerTool](https://www.bresink.com/osx/0TinkerTool/download.php) - an application that gives you access to additional preference settings Apple has built into macOS.
 - UTM - open source virtualization tool with UI
 - Time Out (Mac App Store) - tool for enabling periodical auto breaks from the screen to help eyes get rest
 - Amethyst - Window/Tile Manager for MacOS

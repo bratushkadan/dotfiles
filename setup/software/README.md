@@ -88,8 +88,8 @@ My settings include some such as `*telemetry*: false` in `about:config`>
 ### Draw.io
 
 Add custom icons.
-**TODO:**
 
+- [Yandex Cloud](https://yandex.cloud/ru/brandbook)
 
 ## Other
 

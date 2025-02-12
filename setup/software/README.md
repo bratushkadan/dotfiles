@@ -89,6 +89,9 @@ My settings include some such as `*telemetry*: false` in `about:config`>
 
 Add custom icons.
 
+1) Move custom icons library to ~/Documents/drawio/<libname>
+2) Select the "Open Library..." setting in the "File" menu and import the xml/drawio files.
+
 - [Yandex Cloud](https://yandex.cloud/ru/brandbook)
 
 ## Other

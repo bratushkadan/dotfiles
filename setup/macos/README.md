@@ -31,6 +31,7 @@ Disable.
 ##### Text Input > Input Sources
 
 1. Add the required layouts.
+2. `> Russian and U.S. > Edit...` ->  Disable "Use smart quotes and dashes" 🚨
 
 ##### Keyboard Shortcuts... > Input Sources
 

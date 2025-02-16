@@ -134,6 +134,12 @@ tfenv use 1.5.7
 
 #### Install Vagrant
 
+##### New: qemu provider
+
+Source: [Vagrant Setup for macOS with Apple Chips](https://dev.to/flpcastro/vagrant-setup-for-macos-with-apple-chips-87p)
+
+##### Old: vmware provider
+
 [Vagrant for arm64 macs | Habr article](https://habr.com/ru/companies/bar/articles/708950/)
 
 [VMWare license keys (for test purposes only)](https://gist.github.com/ezracb/de0f33ca55e340f43328467e6787b7a9)
@@ -144,10 +150,13 @@ wget https://download3.vmware.com/software/FUS-TP2023/VMware-Fusion-e.x.p-220689
 
 ##### Official Vagrant Boxes
 
+[**Official Vagrant VM boxes for ARM64 qemu provider**](https://portal.cloud.hashicorp.com/vagrant/discover?architectures=arm64&providers=qemu)
+
 [Official Vagrant VM boxes](https://portal.cloud.hashicorp.com/vagrant/discover?architectures=arm64&providers=vmware_desktop)
 
 My favorite boxes:
-- [bento/ubuntu-24.04](https://portal.cloud.hashicorp.com/vagrant/discover/bento/ubuntu-24.04)
+- [perk/ubuntu-2204-arm64](https://portal.cloud.hashicorp.com/vagrant/discover/perk/ubuntu-2204-arm64) - for qemu
+- [bento/ubuntu-24.04 - for vmware](https://portal.cloud.hashicorp.com/vagrant/discover/bento/ubuntu-24.04)
 
 #### Install via DMGs
 

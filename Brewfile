@@ -122,17 +122,18 @@ cask "macfuse"
 cask "scroll-reverser"
 cask "tor-browser"
 cask "vagrant"
-cask "vagrant-vmware-utility"
 cask "visual-studio-code"
 cask "vlc"
 cask "yandex-cloud-cli"
 cask "yandex-disk"
 mas "Elpy", id: 1440013765
+mas "GIPHY CAPTURE", id: 668208984
 mas "Keynote", id: 409183694
 mas "Money Flow", id: 900890647
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Telegram", id: 747648890
+mas "Telegram Lite", id: 946399090
 mas "TickTick", id: 966085870
 mas "Toggl Track", id: 1291898086
 vscode "4ops.terraform"
@@ -165,6 +166,7 @@ vscode "foxundermoon.shell-format"
 vscode "github.github-vscode-theme"
 vscode "golang.go"
 vscode "gurayyarar.dummytextgenerator"
+vscode "humao.rest-client"
 vscode "jasonnutter.search-node-modules"
 vscode "jeff-hykin.better-dockerfile-syntax"
 vscode "kenhowardpdx.vscode-gist"

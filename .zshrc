@@ -96,9 +96,23 @@ export BROWSER="firefox"
 export DOTFILES="~/dotfiles"
 
 # set up kubectl
-source <(kubectl completion zsh)
+function kubectl() {
+    unfunction "$0"
+
+    source <(kubectl completion zsh)
+
+    $0 "$@"
+}
+
 # set up helm
-source <(helm completion zsh)
+function helm() {
+    unfunction "$0"
+
+    source <(helm completion zsh)
+
+    $0 "$@"
+}
+
 # short alias to set/show context/namespace (only works for bash and bash-compatible shells, current context to be set before using kn to set namespace)
 alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; } ; f'
 alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'
@@ -150,8 +164,65 @@ export TFENV_REMOTE=https://hashicorp-releases.yandexcloud.net
 # export PYTHONPATH=$PYTHONPATH:`pwd`;
 
 ## Yandex Cloud CLI
-if [ -f "/Users/${USER}/yandex-cloud/path.bash.inc" ]; then source "/Users/${USER}/yandex-cloud/path.bash.inc"; fi
-if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/${USER}/yandex-cloud/completion.zsh.inc"; fi
+# function yc() {
+#     unfunction "$0"
+# 
+#     if [ -f "/Users/${USER}/yandex-cloud/path.bash.inc" ]; then source "/Users/${USER}/yandex-cloud/path.bash.inc"; fi
+#     if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/${USER}/yandex-cloud/completion.zsh.inc"; fi
+# 
+#     $0 "$@"
+# }
+
+## Attempt 2
+# function load_yc_and_completion() {
+#   echo "load_yc_and_completion"
+#   if [ -f "/Users/${USER}/yandex-cloud/path.bash.inc" ];
+#     then source "/Users/${USER}/yandex-cloud/path.bash.inc";
+#   fi
+#   if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ];
+#     then source "/Users/${USER}/yandex-cloud/completion.zsh.inc";
+#   fi
+# 
+#   unfunction _yc_completion_loader
+# }
+# 
+# function _yc_completion_loader() {
+#     load_yc_and_completion
+#     # After loading, retry the completion request
+#     compdef yc
+#     compdef _files yc  # Or whatever specific function handles 'yc' completions
+#     compinit
+#     _main_complete  # Retry the completion logic
+# }
+# 
+# compdef _yc_completion_loader yc
+## Attempt 3
+function yc() {
+    unfunction "$0"
+    add-zsh-hook -d precmd lazy_load_autocomplete
+
+    if [ -f "/Users/${USER}/yandex-cloud/path.bash.inc" ]; then source "/Users/${USER}/yandex-cloud/path.bash.inc"; fi
+    if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/${USER}/yandex-cloud/completion.zsh.inc"; fi
+
+    $0 "$@"
+}
+
+function _handle_yc_completions() {
+  if [ -f "/Users/${USER}/yandex-cloud/path.bash.inc" ]; then source "/Users/${USER}/yandex-cloud/path.bash.inc"; fi
+  if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/${USER}/yandex-cloud/completion.zsh.inc"; fi
+  _main_complete
+}
+
+function lazy_load_autocomplete() {
+  add-zsh-hook -d precmd lazy_load_autocomplete
+
+  if command -v yc >/dev/null 2>&1; then
+    compdef _handle_yc_completions yc
+    return
+  fi
+}
+
+add-zsh-hook precmd lazy_load_autocomplete
 
 ## nvm - nodejs version manager
 # export NVM_DIR=$HOME/.nvm;
@@ -161,4 +232,3 @@ if [ -f "/Users/${USER}/yandex-cloud/completion.zsh.inc" ]; then source "/Users/
 
 # The next line updates PATH for YDB CLI.
 if [ -f '/Users/bratushkadan/ydb/path.bash.inc' ]; then source '/Users/bratushkadan/ydb/path.bash.inc'; fi
-

@@ -6,6 +6,7 @@ tap "homebrew/services"
 tap "miniscruff/changie", "https://github.com/miniscruff/changie"
 tap "sidneys/homebrew"
 tap "yandex/arc", "https://arc-vcs.yandex-team.ru/homebrew-tap"
+brew "adr-tools"
 brew "age"
 brew "libssh"
 brew "ansible"
@@ -134,7 +135,6 @@ mas "Keynote", id: 409183694
 mas "Money Flow", id: 900890647
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Telegram", id: 747648890
 mas "Telegram Lite", id: 946399090
 mas "TickTick", id: 966085870
 mas "Toggl Track", id: 1291898086

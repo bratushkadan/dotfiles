@@ -151,4 +151,8 @@ require("lazy").setup({
     {
         "tommcdo/vim-fubitive",
     },
+    {
+        "ThePrimeagen/harpoon",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
 })

@@ -16,3 +16,5 @@ require("plugins.none-ls")
 require("plugins.treesitter")
 require("plugins.mason")
 require("plugins.telescope")
+-- depends on plugins.telescope
+require("plugins.harpoon")

@@ -65,3 +65,10 @@ Vm("<leader>p", '"_dP')
 Nm("<leader>ctx", "actx context.Context")
 Nm("<leader>ct,x", "actx context.Context, ")
 Nm("<leader>ge", "_Cif err := <Esc>pA; err != nil {<Esc>o}<Esc>Oreturn ")
+
+-- Harpoon
+Nm("<S-h><S-s>", ":Telescope harpoon marks<CR>")
+Nm("<S-h><S-m>", ':lua require("harpoon.mark").add_file()<CR>')
+Nm("<S-h><S-b>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
+Nm("<S-h><S-n>", ':lua require("harpoon.ui").nav_next()<CR>')
+Nm("<S-h><S-p>", ':lua require("harpoon.ui").nav_prev()<CR>')

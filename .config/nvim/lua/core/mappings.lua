@@ -62,4 +62,6 @@ Nm("N", "Nzzzv")
 Vm("<leader>p", '"_dP')
 
 -- Go
-Nm("<leader>ctx", "actx context.Context, ")
+Nm("<leader>ctx", "actx context.Context")
+Nm("<leader>ct,x", "actx context.Context, ")
+Nm("<leader>ge", "_Cif err := <Esc>pA; err != nil {<Esc>o}<Esc>Oreturn ")

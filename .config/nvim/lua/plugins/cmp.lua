@@ -163,6 +163,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 local cfg = require("yaml-companion").setup({
     builtin_matchers = {
         kubernetes = { enabled = true },
+        cloud_init = { enabled = true },
     },
     schemas = {
         {
@@ -189,10 +190,12 @@ local cfg = require("yaml-companion").setup({
             filetypes = { "yaml", "yml" },
             yaml = {
                 validate = true,
+                hover = true,
                 schemaStore = {
                     enable = false,
-                    url = "",
+                    url = "https://www.schemastore.org/api/json/catalog.json",
                 },
+                schemaDownload = { enable = true },
                 -- schemas from store, matched by filename
                 -- loaded automatically
                 schemas = require("schemastore").yaml.schemas({

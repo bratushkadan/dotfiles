@@ -24,7 +24,6 @@ require("mason-tool-installer").setup({
         "pylint",
         "pyright",
         "ruff",
-        "salt-lint",
         "selene",
         "snyk",
         "sqlfmt",

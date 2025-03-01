@@ -183,8 +183,6 @@ Situational:
 
 `brew bundle dump -f` writes current system's brew state into a file, `brew bundle -v` installs the dependencies listed in the *Brewfile*.
 
-cp ./fonts/nerd/UbuntuMonoNerdFont-Regular.ttf /usr/local/share/fonts/
-
 ### `mas` – CLI for Mac App Store
 
 List installed Mac App Store Apps:

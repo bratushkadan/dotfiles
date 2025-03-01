@@ -1,6 +1,6 @@
 -- Filetype autodetect
 
-vim.api.nvim_command("autocmd BufRead,BufNewFile *.sls set filetype=sls")
+vim.api.nvim_command("autocmd BufRead,BufNewFile *.tf set filetype=terraform")
 
 vim.lsp.set_log_level("off") -- "debug"
 

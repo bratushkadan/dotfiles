@@ -1,8 +1,12 @@
 [font]
-size = 16.0
+size = 18.0
 
 [font.normal]
 family = "UbuntuMono Nerd Font"
+# family = "MesloLGSDZ Nerd Font Mono"
+# family = "0xProto Nerd Font Mono"
+# family = "FiraMono Nerd Font Mono"
+# family = "JetBrainsMonoNerdFontCompleteM"
 
 [env]
 TERM = "xterm-256color"

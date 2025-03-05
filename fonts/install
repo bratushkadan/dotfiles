@@ -3,10 +3,10 @@
 os="$(uname)"
 case $os in
     "Linux")
-        cp ./fonts/nerd/*.ttf /usr/local/share/fonts/
+        cp ./fonts/nerd/*.?tf /usr/local/share/fonts/
 ;;
     "Darwin")
-        cp ./fonts/nerd/*.ttf ~/Library/Fonts/
+        cp ./fonts/nerd/*.?tf ~/Library/Fonts/
 ;;
     *)
         echo "Error: could not copy fonts. OS is neither Linux, nor Darwin." >&2

@@ -74,3 +74,7 @@ Nm("<S-h><S-m>", ':lua require("harpoon.mark").add_file()<CR>')
 Nm("<S-h><S-b>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>')
 Nm("<S-h><S-n>", ':lua require("harpoon.ui").nav_next()<CR>')
 Nm("<S-h><S-p>", ':lua require("harpoon.ui").nav_prev()<CR>')
+
+-- Lsp
+-- https://github.com/neovim/nvim-lspconfig/issues/1046
+Nm("<leader>g", ':lua vim.diagnostic.open_float(0, {scope="line"})<CR>')

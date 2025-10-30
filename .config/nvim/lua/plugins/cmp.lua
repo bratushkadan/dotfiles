@@ -59,10 +59,10 @@ cmp.setup.cmdline(":", {
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local lspconfig_util = require("lspconfig.util")
 local servers = {
     "bashls",
     "buf_ls",
+    "gopls",
     "ts_ls",
     "jsonls",
     "helm_ls",
@@ -82,7 +82,7 @@ for _, server in ipairs(servers) do
     vim.lsp.enable(server)
 end
 
--- lsps configured below: lua, go
+-- lsps configured below: lua
 
 vim.lsp.config("lua_ls", {
     capabilities = capabilities,
@@ -102,29 +102,10 @@ vim.lsp.config("lua_ls", {
     },
 })
 vim.lsp.enable("lua_ls")
-vim.lsp.config("gopls", {
-    capabilities = capabilities,
-    cmd = { "gopls" },
-    filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    root_dir = lspconfig_util.root_pattern("go.work", "go.mod", ".git"),
-    settings = {
-        gopls = {
-            completeUnimported = true,
-            -- enables placeholders with the function signature/parameters when autocompleted (e.g. make -> make(type, 0))
-            usePlaceholders = true,
-            -- there's much more static analysis tools provided by gopls
-            -- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
-            analyses = {
-                unusedparams = true,
-            },
-        },
-    },
-})
-vim.lsp.enable("gopls")
 
 vim.lsp.config("pyright", {
     capabilities = capabilities,
-    filetypes = { "python" },
+    filetypes = { "python", "py" },
 })
 vim.lsp.enable("pyright")
 

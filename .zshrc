@@ -152,8 +152,8 @@ alias v=nvim
 export TFENV_REMOTE=https://hashicorp-releases.yandexcloud.net
 
 ## sdkman - java version manager
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 ## Obsidian
 # export OBSIDIAN_VAULT=~/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Dan\'s\ vault

@@ -60,7 +60,6 @@ cmp.setup.cmdline(":", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig_util = require("lspconfig.util")
-local lspconfig = require("lspconfig")
 local servers = {
     "bashls",
     "buf_ls",
@@ -76,15 +75,16 @@ local servers = {
 }
 
 -- lsps with default config
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup({
+for _, server in ipairs(servers) do
+    vim.lsp.config(server, {
         capabilities = capabilities,
     })
+    vim.lsp.enable(server)
 end
 
 -- lsps configured below: lua, go
 
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
     capabilities = capabilities,
     settings = {
         Lua = {
@@ -101,7 +101,8 @@ lspconfig.lua_ls.setup({
         },
     },
 })
-lspconfig["gopls"].setup({
+vim.lsp.enable("lua_ls")
+vim.lsp.config("gopls", {
     capabilities = capabilities,
     cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -119,11 +120,13 @@ lspconfig["gopls"].setup({
         },
     },
 })
+vim.lsp.enable("gopls")
 
-lspconfig["pyright"].setup({
+vim.lsp.config("pyright", {
     capabilities = capabilities,
     filetypes = { "python" },
 })
+vim.lsp.enable("pyright")
 
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>E", vim.diagnostic.open_float)
@@ -209,5 +212,6 @@ local cfg = require("yaml-companion").setup({
     },
 })
 
-lspconfig.yamlls.setup(cfg)
+vim.lsp.config("yamlls", cfg)
+vim.lsp.enable("yamlls")
 require("telescope").load_extension("yaml_schema")

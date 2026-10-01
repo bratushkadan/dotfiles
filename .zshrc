@@ -81,7 +81,7 @@ alias cd="j"
 
 
 # Utility aliases
-alias cpwd="pwd | pbcopy"
+alias cpwd="echo -n \"\$PWD\" | pbcopy"
 
 # Work
 

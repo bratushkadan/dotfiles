@@ -230,9 +230,6 @@ add-zsh-hook precmd lazy_load_autocomplete
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# The next line updates PATH for YDB CLI.
-if [ -f '/Users/bratushkadan/ydb/path.bash.inc' ]; then source '/Users/bratushkadan/ydb/path.bash.inc'; fi
-
 # Anki
 function anki_ogg_to_mp3() {
   find "$HOME/Library/Application Support/Anki2/dan/collection.media" -type f -name "*.ogg" -exec sh -c 'for file do ffmpeg -y -i "$file" "${file%.ogg}.mp3"; done' sh {} +

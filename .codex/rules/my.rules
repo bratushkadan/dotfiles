@@ -1,0 +1,45 @@
+prefix_rule(
+    pattern = ["pwd"],
+    decision = "allow",
+    justification = "Read-only search utility"
+)
+prefix_rule(
+    pattern = ["rg"],
+    decision = "allow",
+    justification = "Read-only search utility"
+)
+
+prefix_rule(
+    pattern = ["grep"],
+    decision = "allow",
+    justification = "Read-only search utility"
+)
+
+prefix_rule(
+    pattern = ["sed"],
+    decision = "allow",
+    justification = "Stream editor for text manipulation"
+)
+
+prefix_rule(
+    pattern = ["cat"],
+    decision = "allow",
+    justification = "Read file contents"
+)
+
+prefix_rule(
+    pattern = ["ls"],
+    decision = "allow",
+    justification = "List directory contents"
+)
+prefix_rule(
+    pattern = ["go", ["test", "vet", "fmt", "mod tidy"]],
+    decision = "allow",
+    justification = "allow undestructive Go commands"
+)
+
+prefix_rule(
+    pattern = [["gofmt", "golangci-lint"]],
+    decision = "allow",
+    justification = "allow undestructive Go commands"
+)

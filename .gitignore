@@ -3,3 +3,4 @@
 .DS_Store
 .zshrc_work
 .config/yandex-cloud
+.codex/rules/default.rules

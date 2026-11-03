@@ -22,26 +22,9 @@ Initializing symlinks is dead simple:
 
 ### nvim
 
-Once [`stow .` has been run](./#dotfiles-arrangement), [Lazy](https://github.com/folke/lazy.nvim) plugin manager (`:Lazy` in nvim) will automatically download all the listed dependencies nvim dependencies.
+Neovim uses [AstroNvim](https://docs.astronvim.com/) v6. After `stow .`, launch `nvim` to install the plugins automatically.
 
-Update plugins via Lazy:
-
-```bash
-:Lazy update
-```
-
-[Mason](https://github.com/williamboman/mason.nvim) (`:Mason`) dependencies will be installed automatically as well.
-
-NOTE: Terraform language server download will fail, as files are fetched from Hashicorp's CDN.
-
-#### Plugins
-
-Describe here the plugin update/installation process.
-
-#### Telescope plugin
-
-`brew install ripgrep` - DO NOT install `fd` simultaneously with `rg`, precedence seems to be `fd` > `rg`, Telescope bugs out and `pickers.find_files.hidden = true` option no longer shows hidden files/directories :(
-Upd Jan 29, 2025 - no longer relevant, but be cautious.
+See [the Neovim configuration README](.config/nvim/README.md) for requirements, commands, and customization.
 
 ### `tmux`
 

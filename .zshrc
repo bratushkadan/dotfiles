@@ -18,6 +18,11 @@ SAVEHIST=10000000
 
 HISTORY_IGNORE="(ls|cd|pwd|exit|cd)*"
 
+# Setup
+fpath+=~/.zfunc
+
+FPATH="/Users/$USER/.zsh/:$FPATH"
+
 # https://stackoverflow.com/a/74323525
 # autoload -Uz compinit && compinit
 autoload -Uz compinit
@@ -84,11 +89,6 @@ alias cd="j"
 alias cpwd="echo -n \"\$PWD\" | pbcopy"
 
 # Work
-
-## Setup
-fpath+=~/.zfunc
-
-FPATH="/Users/$USER/.zsh/:$FPATH"
 
 ## Vars
 export BROWSER="firefox"

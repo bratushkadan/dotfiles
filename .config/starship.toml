@@ -4,6 +4,15 @@ symbol = '🟩 '
 [python]
 python_binary = 'python3'
 
+[custom.arc_branch]
+command = '''arc status -b --json | jq -cMr .branch_info.local.name'''
+when = 'pwd | grep -E "^/Users/[a-zA-Z_\-]+/.(arcadia|cloudia)/"'
+description = 'show arc branch status'
+format = '([${symbol}${output}]($style))'
+style = 'bold purple'
+symbol = ' '
+
+
 [git_branch]
 disabled = false
 

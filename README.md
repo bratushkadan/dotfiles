@@ -26,6 +26,25 @@ Neovim uses [AstroNvim](https://docs.astronvim.com/) v6. After `stow .`, launch 
 
 See [the Neovim configuration README](.config/nvim/README.md) for requirements, commands, and customization.
 
+#### Key mappings
+
+The leader key is Space. Standard Vim commands still work. The old custom mappings were removed during the migration; some AstroNvim defaults use the same keys.
+
+| Shortcut | Current behavior | Migration note |
+| --- | --- | --- |
+| `Space ff` | Find files | Same purpose as before |
+| `Space fb` | Find buffers | Same purpose as before |
+| `Space fh` | Find help | Same purpose as before |
+| `Space db` | Toggle a breakpoint | Same purpose as before |
+| `Space e` | Toggle the file explorer | Previously revealed the current file |
+| `Space o` | Switch focus between the explorer and editor | Previously focused a floating explorer |
+| `Space fg` | Find Git files | Previously searched file contents; use `Space fw` now |
+| `Space fs` | Search buffers, recent files, and files | Previously opened text search with arguments |
+| `Space fw` | Search file contents | AstroNvim text search |
+| `Space fk` | Find key mappings | Browse the current shortcuts |
+
+Old Harpoon bindings, custom Bufferline commands, and custom Go shortcuts were removed with the previous configuration. Press Space and wait to see available mappings in the which-key popup.
+
 ### `tmux`
 
 Terminal multiplexer.
@@ -55,4 +74,3 @@ Terminal multiplexer.
 - git
 - ssh
 - starship
-

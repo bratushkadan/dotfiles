@@ -10,6 +10,16 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+# env
+
+if [ ! -f "$HOME/.env" ]; then
+  touch "$HOME/.env" && chmod 640 "$HOME/.env"
+else
+  set -a
+  source "$HOME/.env"
+  set +a
+fi
+
 # history opts
 
 HISTFILE="$HOME/.zsh_history"

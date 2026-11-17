@@ -36,4 +36,20 @@
           name: cordis:include
           config:
             path: "${DSH_PRESETS_WEB_DIR}/base/minimal.yml"
+  - id: preset-minimal-ticktick
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: minimal-ticktick
+      name: Min TickTick
+      description: >-
+        Легкие и быстрые эксперименты. TickTick.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: "${DSH_PRESETS_WEB_DIR}/base/minimal.yml"
+        - id: ticktick
+          name: cordis:include
+          config:
+            path: "${DSH_PRESETS_WEB_DIR}/ticktick/mcp.yml"
 

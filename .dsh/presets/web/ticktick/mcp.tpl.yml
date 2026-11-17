@@ -1,0 +1,8 @@
+- id: mcp-ticktick
+  name: "@deepseek-ai/dsh-mcp-client"
+  config:
+    serverName: ticktick
+    transport: streamable-http
+    url: "https://mcp.ticktick.com"
+    headers:
+      Authorization: !!js '"Bearer " + process.env.TICKTICK_MCP_TOKEN'

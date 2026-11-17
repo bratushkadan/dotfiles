@@ -27,14 +27,7 @@ Initializing symlinks is dead simple:
 Render the presets:
 
 ```bash
-find . -name '*.tpl.yml' -exec bash -c '
-set -e
-
-target=$(echo {} | sed "s/.tpl//")
-
-cat {} | envsubst > $target
-echo "Rendered $target"
-' \;
+./scripts/render-presets.sh
 ```
 
 ### nvim

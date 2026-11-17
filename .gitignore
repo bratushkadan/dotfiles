@@ -9,3 +9,5 @@
 
 .dsh/*
 !.dsh/presets/
+.dsh/presets/**/*.yml
+!.dsh/presets/**/*.tpl.yml

@@ -1,0 +1,39 @@
+- insert:
+  - id: preset-plan
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: plan-work
+      name: Plan Work
+      description: >-
+        Планирование, исследования, «вдумчивое» создание, проектирование.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: "${DSH_PRESETS_WEB_DIR}/base/plan.yml"
+  - id: preset-standard-work
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: standard-work
+      name: Standard Work
+      description: >-
+        Стандартная работа – фикс багов, добавление фич, организация.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: "${DSH_PRESETS_WEB_DIR}/base/standard.yml"
+  - id: preset-minimal-work
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: minimal-work
+      name: Minimal Work
+      description: >-
+        Легкие и быстрые эксперименты.
+        Запуск тестов, фикс маленького бага, перезапуск тестов, репорт результата.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: "${DSH_PRESETS_WEB_DIR}/base/minimal.yml"
+

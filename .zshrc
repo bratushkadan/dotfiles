@@ -230,3 +230,17 @@ function anki_ogg_to_mp3() {
   find "$HOME/Library/Application Support/Anki2/dan/collection.media" -type f -name "*.oga" -exec sh -c 'for file do ffmpeg -y -i "$file" "${file%.oga}.mp3"; done' sh {} +
 }
 
+export DSH_PRESETS_DIR="$HOME/dotfiles/.dsh/presets"
+export DSH_PRESETS_WEB_DIR="$DSH_PRESETS_DIR/web"
+
+_dsh_bin="$(whence -p dsh)"
+
+function dsh() {
+  local -a dsh_args
+  if [[ -n $DSH_ARGS ]]; then
+    dsh_args=( "${(@Q)${(z)DSH_ARGS}}" )
+  fi
+  "$_dsh_bin" "$@" "${dsh_args[@]}" --patch "$DSH_PRESETS_WEB_DIR/cordis.patch.yml"
+}
+
+alias dsh-web="dsh --profile web"

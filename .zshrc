@@ -250,7 +250,7 @@ function dsh() {
   if [[ -n $DSH_ARGS ]]; then
     dsh_args=( "${(@Q)${(z)DSH_ARGS}}" )
   fi
-  "$_dsh_bin" "$@" "${dsh_args[@]}" --patch "$DSH_PRESETS_WEB_DIR/cordis.patch.yml"
+  "$_dsh_bin" "$@" --patch "$DSH_PRESETS_WEB_DIR/cordis.patch.yml" "${dsh_args[@]}"
 }
 
 alias dsh-web="dsh --profile web"

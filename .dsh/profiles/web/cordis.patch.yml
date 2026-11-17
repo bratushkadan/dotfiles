@@ -14,4 +14,41 @@
   name: "@deepseek-ai/dsh-agent-preset-registry"
   config:
     default: standard
-    selectedDefault: minimal-ticktick
+    selectedDefault: standard-work
+- id: llm-openai-codex
+  name: dsh-codex-connect
+  config:
+    models:
+      - gpt-6-astra
+      - gpt-6.1-sol
+      - gpt-6-luna
+      - gpt-6.1-terra
+    enableProxy: false
+    contextWindowOverrides:
+      gpt-5.3-codex-spark: null
+      gpt-5.4: null
+      gpt-5.4-mini: null
+      gpt-5.5: null
+      gpt-5.6-luna: null
+      gpt-5.6-sol: null
+      gpt-5.6-terra: null
+      gpt-6-astra: 872000
+      gpt-6.1-sol: 872000
+      gpt-6-sol: null
+      gpt-6-luna: 500000
+      gpt-6.1-terra: null
+    enableSearch: false
+    enableReserveFallback: false
+    enableNativeCompaction: false
+    enableImageTool: false
+    enableImageGeneration: false
+    enableAutoReview: false
+- id: subagent-model-selection-settings
+  name: "@deepseek-ai/dsh-tool-subagent/model-selection-settings"
+  config:
+    enabled: false
+    allowedModels:
+      - provider: opencode-go
+        model: opencode-go/deepseek-v4.1-flash
+      - provider: opencode-go
+        model: opencode-go/qwen3.8-flash

@@ -8,8 +8,4 @@
 .agents/.skill-lock.json
 
 .dsh/*
-!.dsh/profiles/
-.dsh/profiles/*
-!.dsh/profiles/web/
-.dsh/profiles/web/*
-!.dsh/profiles/web/cordis.patch.yml
+!.dsh/presets/

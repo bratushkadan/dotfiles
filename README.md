@@ -20,6 +20,12 @@ Initializing symlinks is dead simple:
 
 ## Tools
 
+### DeepSeek Harness (dsh)
+
+Setup
+
+
+
 ### nvim
 
 Neovim uses [AstroNvim](https://docs.astronvim.com/) v6. After `stow .`, launch `nvim` to install the plugins automatically.

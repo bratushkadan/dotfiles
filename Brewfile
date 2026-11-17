@@ -307,6 +307,8 @@ cask "vagrant"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Binary releases of VS Code without MS branding/telemetry/licensing
+cask "vscodium"
 # CLI for Yandex Cloud
 cask "yandex-cloud-cli"
 # Cloud storage

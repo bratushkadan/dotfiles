@@ -30,6 +30,8 @@ Render the presets:
 ./scripts/render-presets.sh
 ```
 
+Integrate with OpenCode Console: https://opencode.ai/console/integrations/deepseek-harness
+
 ### nvim
 
 Neovim uses [AstroNvim](https://docs.astronvim.com/) v6. After `stow .`, launch `nvim` to install the plugins automatically.

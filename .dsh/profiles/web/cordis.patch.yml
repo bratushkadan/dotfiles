@@ -20,7 +20,9 @@
   config:
     models:
       - gpt-6-astra
+      - gpt-6.2-astra
       - gpt-6.1-sol
+      - gpt-6.2-sol
       - gpt-6-luna
       - gpt-6.1-terra
     enableProxy: false
@@ -43,6 +45,7 @@
     enableImageTool: false
     enableImageGeneration: false
     enableAutoReview: false
+  disabled: false
 - id: subagent-model-selection-settings
   name: "@deepseek-ai/dsh-tool-subagent/model-selection-settings"
   config:

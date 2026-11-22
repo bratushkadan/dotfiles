@@ -9,7 +9,8 @@
       "bundles": [
         "@deepseek-ai/dsh-base",
         "@deepseek-ai/dsh-web-app",
-        "dsh-codex-connect"
+        "dsh-codex-connect",
+        "@deepseek-ai/dsh-experimental-auto-review"
       ]
     }
   }

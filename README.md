@@ -2,29 +2,94 @@
 
 ## Dotfiles Arrangement
 
-Dotfiles are managed via GNU Stow – the "symlink farm manager". Its largest benefit is seamless integration with VCS that allows one to set it up once and reach **only** for the `git commit/push` command if there's a need to change configuration. That's it, once it's configured it just works.
+GNU Stow links configuration files from the checkout into `$HOME`.
 
-Initializing symlinks is dead simple:
+```sh
+git clone git@github.com:bratushkadan/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+```
 
-1. `git clone git@github.com:bratushkadan/dotfiles.git ~/dotfiles && cd ~/dotfiles`
-2. `stow .`
+On macOS, the [base Homebrew profile](#homebrew-profiles) includes
+Stow. From the repository root, preview and install the base package.
 
-### dependencies
+```sh
+stow -n -v -d ./stow -t "$HOME" --no-folding base
+stow       -d ./stow -t "$HOME" --no-folding base
+```
 
-- git
-- stow (included in this repo's Brewfile)
+Add either or both optional packages as needed.
 
-## [MacOS / OSX](./setup/macos/README.md)
+```sh
+stow -d ./stow -t "$HOME" --no-folding personal
+stow -d ./stow -t "$HOME" --no-folding work
+```
 
-### [Brew / BrewFile](./setup/macos/README.md#brew--brewfile)
+| Package | Managed files |
+| --- | --- |
+| `base` | zsh, Git, tmux, Starship, Neovim, Codex notification hooks, and the Brewfile skill |
+| `personal` | Alacritty and personal Codex rules |
+| `work` | Terraform, OpenTofu, yamllint, and work Codex rules |
+
+Each package under `stow/` mirrors its paths in `$HOME`. Use
+`--no-folding` so Stow creates links to individual files inside directories
+like `~/.codex` and `~/.agents`. When updating an existing checkout from
+the old `stow .` layout, replace the old links before installing the new
+packages and preserve local files in linked directories.
+[GNU Stow options](https://www.gnu.org/software/stow/manual/html_node/Invoking-Stow.html)
+
+## macOS setup
+
+### Homebrew profiles
+
+From the repository root, install the base profile and add the personal or work
+profile as needed. A machine can use both additions.
+
+| Profile | Contents |
+| --- | --- |
+| [`base`](brew/base.Brewfile) | Git, Stow, Neovim, tmux, and shell tools |
+| [`personal`](brew/personal.Brewfile) | Desktop apps and personal utilities, including Alacritty, Anki, and TickTick |
+| [`work`](brew/work.Brewfile) | Development tools, Kubernetes, Yandex Arc, and coding agents |
+
+```sh
+brew bundle install --no-upgrade --file=brew/base.Brewfile
+```
+
+The root [`Brewfile`](Brewfile) is the full package inventory. The
+[macOS setup guide](./setup/macos/README.md#install) has the optional install
+commands and prerequisites. Select the [zsh profile](#zsh) separately.
 
 ## Tools
+
+### Zsh
+
+`.zshrc` loads the modules under [`.config/zsh/`](stow/base/.config/zsh) in a fixed
+order. Every profile loads the shared modules, `~/.env`, and
+`~/.env_common`.
+
+| `DOTFILES_PROFILE` | Optional modules |
+| --- | --- |
+| `base` | Shared modules only |
+| `personal` | Anki helpers |
+| `work` | Kubernetes, Terraform, and Yandex Cloud helpers. Also loads `~/.zshrc_work` when present |
+| `all` (default) | Both optional profiles |
+
+Set the default in your local `~/.env_common`. This example defaults to
+`work` while allowing `DOTFILES_PROFILE=base zsh` for a single launch.
+
+```sh
+DOTFILES_PROFILE=${DOTFILES_PROFILE:-work}
+```
 
 ### DeepSeek Harness (dsh)
 
 #### Setup
 
-Render the presets:
+The dsh setup uses the checkout's `.dsh/` directory. On a fresh machine,
+if `~/.dsh` is absent, link it from the repository root with
+`ln -s "$PWD/.dsh" "$HOME/.dsh"`.
+
+Run the renderer from the repository root. It uses `envsubst` to create
+YAML files next to the templates in `.dsh/presets/`.
 
 ```bash
 ./scripts/render-presets.sh
@@ -34,9 +99,9 @@ Integrate with OpenCode Console: https://opencode.ai/console/integrations/deepse
 
 ### nvim
 
-Neovim uses [AstroNvim](https://docs.astronvim.com/) v6. After `stow .`, launch `nvim` to install the plugins automatically.
+Neovim uses [AstroNvim](https://docs.astronvim.com/) v6. After installing the `base` Stow package, launch `nvim` to install the plugins automatically.
 
-See [the Neovim configuration README](.config/nvim/README.md) for requirements, commands, and customization.
+See [the Neovim configuration README](stow/base/.config/nvim/README.md) for requirements, commands, and customization.
 
 #### Key mappings
 
@@ -63,10 +128,10 @@ Terminal multiplexer.
 
 #### Steps to set up
 
-1. (✅ installed automatically via brew) install *tmux*;
-2. (✅ installed automatically via brew) install [`tpm`](https://github.com/tmux-plugins/tpm):
-3. (✅ configuration is symlinked via Stow) move from the repository root `.tmux.conf` to home directory: `mv .tmux.conf $HOME/`:
-4. Run `tmux` and press `C-a + I` (capital I, after keys rebound) to install plugins;
+1. Install the [base Homebrew profile](#homebrew-profiles) for tmux and
+   [`tpm`](https://github.com/tmux-plugins/tpm).
+2. [Link the dotfiles](#dotfiles-arrangement) to install `~/.tmux.conf`.
+3. Run `tmux` and press `C-a + I` (capital I) to install plugins.
 
 #### Useful `tmux` repositories
 
@@ -74,6 +139,24 @@ Terminal multiplexer.
 
 
 ## Roadmap
+
+### DeepSeek Harness layout
+
+For dsh, the proposed layout keeps source templates in `tools/dsh/` and
+renders the active profiles into `~/.dsh/`.
+
+### Tools to revisit
+
+- Consider chezmoi when machines need different contents for shared files,
+  such as Git identity or agent settings. A local role can drive file
+  templates and choose which files to install.
+  [Machine-specific configuration](https://www.chezmoi.io/user-guide/manage-machine-to-machine-differences/)
+- Consider Rulesync for sharing one set of instructions across Codex, Claude
+  Code, OpenCode, and dsh. A project-level trial can start with Markdown rules
+  and `generate --dry-run`. Codex `.rules` files use the separate
+  permissions feature. For dsh, Rulesync manages MCP in the global
+  `~/.dsh/cordis.patch.yml` layer.
+  [Supported features](https://rulesync.dyoshikawa.com/reference/supported-tools) · [dsh file format](https://rulesync.dyoshikawa.com/reference/file-formats)
 
 ## In Progress ⏳
 

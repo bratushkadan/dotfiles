@@ -2,6 +2,7 @@
 fonts
 setup
 Brewfile
+^/brew$
 .DS_Store
 ^/README.*
 

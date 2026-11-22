@@ -1,6 +1,6 @@
 # Setup MacOS
 
-The **very first thing to do** is install Brew and install packages from Brewfile!
+Start with [Homebrew and the base profile](#install).
 
 ## Settings
 
@@ -83,43 +83,29 @@ Sign in to your Apple ID account.
 
 Turn on iCloud sync to add device to the Apple ID account. In the iCloud section, turn on the "Sync Passwords" option.
 
-NOTE(\#1): Mac App Store apps (from `mas` sections inside Brewfile) will not be loaded/installed unless you're signed in to your Apple ID account.
+The personal profile includes Mac App Store apps. Sign in to the App Store before installing it.
 
 ### Install
 
-First things first, install:
-1. Brew
+1. Install [Homebrew](https://brew.sh/) and follow its instructions to add it to your shell.
+2. From the repository root, install the base tools:
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+   ```bash
+   brew bundle install --no-upgrade --file=brew/base.Brewfile
+   ```
 
-Activate the shell:
-```bash
-eval $(/opt/homebrew/bin/brew shellenv)
-```
+3. Install the profiles you need. Both commands can be run on the same Mac.
+   The work profile includes the Yandex Arc tap and requires access to it.
 
-NOTE(\#2): (brew will be accessible via `brew` PATH-variable after running `stow .` that will symlink the `.zprofile` file that includes brew activation).
+   ```bash
+   brew bundle install --no-upgrade --file=brew/personal.Brewfile
+   brew bundle install --no-upgrade --file=brew/work.Brewfile
+   ```
 
-2. Run the command:
+4. [Install fonts](../README.md#install-fonts) and [link the dotfiles](../../README.md#dotfiles-arrangement).
 
-```bash
-brew bundle
-```
-
-NOTE(\#3): `vagrant` and `vagrant-vmware-utility` casks installation will fail unless VPN is turned on.
-
-If VSCode extensions installation fails, install only the VSCode extensions:
-
-```bash
-cat Brewfile | grep ^vscode | brew bundle --file=-
-```
-
-3. [Install fonts](../README.md#install-fonts).
-
-4. Copy the config files: run the `stow` command from the [dotfiles arrangement](../../README.md#dotfiles-arrangement) section instructions.
-
-**Note**: first zsh launch will be unsuccessful, the error will look similarly to `stat /Users/$USER/.zcompdump: stat: No such file or directory`.
+See the [zsh profile settings](../../README.md#zsh) to select which shell
+modules load on this machine.
 
 ### Manual install (Secondary)
 
@@ -179,9 +165,12 @@ Situational:
 
 ### Brew & Brewfile
 
-*Brewfile* is a collection of casks/formulas/taps needed to set up the system for user's demands.
+The root `Brewfile` is the full package inventory. The files in `brew/`
+are curated profiles for setting up a fresh Mac. Add a new package to the
+profile where you want it installed.
 
-`brew bundle dump -f` writes current system's brew state into a file, `brew bundle -v` installs the dependencies listed in the *Brewfile*.
+To refresh the full inventory with `brew bundle dump`, write the dump to a
+temporary file and review the diff before updating the root `Brewfile`.
 
 ### `mas` – CLI for Mac App Store
 

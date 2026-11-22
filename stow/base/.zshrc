@@ -1,0 +1,23 @@
+# Resolve the Stow symlink so this also works before .config/zsh is linked.
+_dotfiles_zsh_dir=${${(%):-%N}:A:h}/.config/zsh
+
+source "$_dotfiles_zsh_dir/options.zsh"
+source "$_dotfiles_zsh_dir/completion.zsh"
+
+[[ -f "$HOME/.env_common" ]] && source "$HOME/.env_common"
+
+_dotfiles_profile=${DOTFILES_PROFILE:-all}
+if [[ $_dotfiles_profile == (work|all) && -f "$HOME/.zshrc_work" ]]; then
+  source "$HOME/.zshrc_work"
+fi
+
+source "$_dotfiles_zsh_dir/fzf.zsh"
+source "$_dotfiles_zsh_dir/tools.zsh"
+case $_dotfiles_profile in
+  work|all) source "$_dotfiles_zsh_dir/work.zsh" ;;
+esac
+case $_dotfiles_profile in
+  personal|all) source "$_dotfiles_zsh_dir/personal.zsh" ;;
+esac
+
+unset _dotfiles_profile _dotfiles_zsh_dir

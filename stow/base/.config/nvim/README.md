@@ -4,7 +4,8 @@ This configuration uses [AstroNvim](https://docs.astronvim.com/) v6 through lazy
 
 ## Setup
 
-Run `stow .` from the dotfiles repository, then start `nvim`. The existing `~/.config/nvim` symlink points here; do not clone the template over it.
+Install the `base` Stow package from the [dotfiles setup guide](../../../../README.md#dotfiles-arrangement),
+then start `nvim`. Stow links the managed files inside `~/.config/nvim/`.
 
 Requirements: Neovim 0.11+, Git, a C compiler, and a Nerd Font configured in the terminal. On macOS, install the compiler with `xcode-select --install` if needed. The Brewfile includes Neovim and ripgrep for searching. Mason installs the Tree-sitter CLI automatically.
 
@@ -28,7 +29,7 @@ The leader key is Space. See the [default mappings](https://docs.astronvim.com/m
 
 `lazy-lock.json` records installed plugin versions and should be committed after intentional updates.
 
-When migrating from another configuration, close Neovim and move its data, state, and cache directories to backups before the first launch, as described in the [installation guide](https://docs.astronvim.com/). Keep the config symlink in place. Old Mason packages and plugins remain in those backups until you choose to remove them.
+When migrating from another configuration, close Neovim and move its data, state, and cache directories to backups before the first launch, as described in the [installation guide](https://docs.astronvim.com/). Keep the configuration links in place. Old Mason packages and plugins remain in those backups until you choose to remove them.
 
 ## Health check note
 

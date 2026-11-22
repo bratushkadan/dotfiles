@@ -1,0 +1,33 @@
+[general]
+# Choose the theme in ~/.config/chezmoi/chezmoi.toml and run chezmoi apply.
+# Catppuccin Mocha — мягкая пастельная палитра.
+# Tokyo Night — холодная палитра с синими и фиолетовыми акцентами.
+import = [{{ printf "themes/%s.toml" .alacrittyTheme | quote }}]
+# Gruvbox Dark — тёплые землистые цвета.
+# Nord — приглушённая серо-синяя палитра.
+# Rose Pine — мягкие розовые и золотистые акценты.
+# One Dark — нейтральный тёмный фон и контрастные акценты.
+
+[window]
+opacity = 0.8
+blur = true
+
+[colors]
+transparent_background_colors = true
+
+[font]
+size = 20.0
+# size = 24.0
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+# family = "MesloLGSDZ Nerd Font Mono"
+# family = "0xProto Nerd Font Mono"
+# family = "FiraMono Nerd Font Mono"
+# family = "JetBrainsMonoNerdFontCompleteM"
+
+[env]
+TERM = "xterm-256color"
+
+# --- colors
+# https://github.com/alacritty/alacritty-theme

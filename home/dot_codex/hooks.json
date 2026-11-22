@@ -1,0 +1,34 @@
+{
+  "hooks": {
+    "SessionStart": [],
+    "UserPromptSubmit": [],
+    "PreToolUse": [],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"$HOME/.codex/cli-notification.sh\" \"Approval requested\"",
+            "async": true,
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [],
+    "SubagentStart": [],
+    "SubagentStop": [],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/sh \"$HOME/.codex/cli-notification.sh\" \"Turn complete\"",
+            "async": true,
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

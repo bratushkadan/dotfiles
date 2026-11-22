@@ -1,0 +1,30 @@
+prefix_rule(
+    pattern = ["arc", ["show", "status", "diff", "log", "root"]],
+    decision = "allow",
+    justification = "arc RO operations",
+    match = [
+        "arc status --short",
+        "arc status",
+    ],
+)
+prefix_rule(
+    pattern = ["arc", "branch", ["list", "-l"]],
+    decision = "allow",
+    justification = "arc branch RO operations",
+    match = [
+        "arc branch -l",
+        "arc branch list",
+    ],
+    not_match = [
+        "arc branch delete"
+    ]
+)
+prefix_rule(
+    pattern = ["arc", "pr", ["changes", "status"]],
+    decision = "allow",
+    justification = "arc pr RO operations",
+    match = [
+        "arc pr changes -h",
+        "arc pr status",
+    ],
+)

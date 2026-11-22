@@ -1,0 +1,41 @@
+if (( $+commands[go] )); then
+  export GOPATH="$(go env GOPATH)"
+  export PATH="$PATH:$GOPATH/bin"
+fi
+
+alias lss="/bin/ls"
+if (( $+commands[eza] )); then
+  alias ls="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+  alias lst="eza --tree --level=2"
+fi
+
+if (( $+commands[zoxide] )); then
+  eval "$(zoxide init zsh --cmd j)"
+  alias cd="j"
+fi
+
+alias cpwd="echo -n \"\$PWD\" | pbcopy"
+alias pip="pip3"
+
+export BROWSER=firefox
+export DOTFILES={{ .chezmoi.workingTree | shellQuote }}
+export VISUAL=nvim
+alias vim=nvim
+alias vi=nvim
+alias v=nvim
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+export DSH_PRESETS_DIR="$HOME/.dsh/presets"
+export DSH_PRESETS_WEB_DIR="$DSH_PRESETS_DIR/web"
+
+function dsh() {
+  local -a dsh_args
+  if [[ -n $DSH_ARGS ]]; then
+    dsh_args=( "${(@Q)${(z)DSH_ARGS}}" )
+  fi
+  command dsh "$@" --patch "$DSH_PRESETS_WEB_DIR/cordis.patch.yml" "${dsh_args[@]}"
+}
+
+alias dsh-web="dsh --profile web"

@@ -1,0 +1,17 @@
+{
+  "name": "dsh-profile-web",
+  "private": true,
+  "dependencies": {
+    "dsh-codex-connect": "0.2.0-alpha.15"
+  },
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-web-app",
+        "dsh-codex-connect",
+        "@deepseek-ai/dsh-experimental-auto-review"
+      ]
+    }
+  }
+}

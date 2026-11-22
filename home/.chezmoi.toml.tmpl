@@ -1,0 +1,10 @@
+{{- $work := promptBoolOnce . "work" "Enable work configuration" false -}}
+{{- $personal := promptBoolOnce . "personal" "Enable personal shell helpers" true -}}
+{{- $themes := list "tokyo_night" "nord" "catppuccin_mocha" "gruvbox_dark" "one_dark" "rose_pine" -}}
+{{- $theme := promptChoiceOnce . "alacrittyTheme" "Alacritty theme" $themes "tokyo_night" -}}
+mode = "symlink"
+
+[data]
+    work = {{ $work }}
+    personal = {{ $personal }}
+    alacrittyTheme = {{ $theme | quote }}

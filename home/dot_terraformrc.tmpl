@@ -1,0 +1,5 @@
+{{- if .work -}}
+{{- template "terraformrc-work" . -}}
+{{- else -}}
+{{- template "terraformrc-base" . -}}
+{{- end -}}

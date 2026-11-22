@@ -1,0 +1,55 @@
+- insert:
+  - id: preset-plan
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: plan-work
+      name: Plan Work
+      description: >-
+        Планирование, исследования, «вдумчивое» создание, проектирование.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: {{ printf "%s/.dsh/presets/web/base/plan.yml" .chezmoi.destDir | quote }}
+  - id: preset-standard-work
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: standard-work
+      name: Standard Work
+      description: >-
+        Стандартная работа – фикс багов, добавление фич, организация.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: {{ printf "%s/.dsh/presets/web/base/standard.yml" .chezmoi.destDir | quote }}
+  - id: preset-minimal-work
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: minimal-work
+      name: Minimal Work
+      description: >-
+        Легкие и быстрые эксперименты.
+        Запуск тестов, фикс маленького бага, перезапуск тестов, репорт результата.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: {{ printf "%s/.dsh/presets/web/base/minimal.yml" .chezmoi.destDir | quote }}
+  - id: preset-minimal-ticktick
+    name: '@deepseek-ai/dsh-agent-preset'
+    config:
+      id: minimal-ticktick
+      name: Min TickTick
+      description: >-
+        Легкие и быстрые эксперименты. TickTick.
+      plugins:
+        - id: base
+          name: cordis:include
+          config:
+            path: {{ printf "%s/.dsh/presets/web/base/minimal.yml" .chezmoi.destDir | quote }}
+        - id: ticktick
+          name: cordis:include
+          config:
+            path: {{ printf "%s/.dsh/presets/web/ticktick/mcp.yml" .chezmoi.destDir | quote }}
+

@@ -1,0 +1,8 @@
+{{ if not .work -}}
+.codex/rules/work.rules
+.config/yamllint
+.tofurc
+{{ end -}}
+{{ if ne .chezmoi.os "darwin" -}}
+.dsh/presets/web/node_modules
+{{ end -}}

@@ -85,24 +85,6 @@ My settings include some such as `*telemetry*: false` in `about:config`>
 1. Manual Profile Backup: press `Cmd + Shift + P` (MacOS) and type in "`Export Profile`".
 1. On another device, use Import Profile in the Command Palette to apply the settings.
 
-### VSCodium on macOS
-
-Install VSCodium with `brew install --cask vscodium`, then run `chezmoi apply`.
-Chezmoi manages the settings and keyboard shortcuts in
-`~/Library/Application Support/VSCodium/User/`. The settings use the current
-home directory. The Go tool and Cloudia paths depend on local installations.
-
-[The Open VSX list](../../vscodium/extensions.tsv) pins the versions of the
-19 registry extensions in the VSCodium setup. Chezmoi runs the installer when
-the list changes and installs missing versions. On an existing machine,
-disable extensions you no longer use from the Extensions view.
-
-[The local list](../../vscodium/local-extensions.tsv) names the three VSIX
-packages. Copy the packages to `~/Downloads/vscodium-vsix/` and run
-`chezmoi apply` again. Use `VSCODIUM_VSIX_DIR` to point to another directory.
-Keep the `publisher.extension@version.vsix` filenames. Chezmoi installs
-packages that are present and reports any missing packages.
-
 ### Draw.io
 
 Add custom icons.

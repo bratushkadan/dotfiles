@@ -5,4 +5,5 @@
 {{ end -}}
 {{ if ne .chezmoi.os "darwin" -}}
 .dsh/presets/web/node_modules
+Library
 {{ end -}}

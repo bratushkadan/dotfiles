@@ -1,0 +1,224 @@
+{
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "rpc.appName": "Visual Studio Code",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "telemetry.telemetryLevel": "off",
+    "workbench.enableExperiments": false,
+    "files.watcherExclude": {
+        "**/build/**": true,
+        "**/dist/**": true
+    },
+    "files.exclude": {
+        "**/.idea": true
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "е": true,
+        "В": true
+    },
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "gitlens.advanced.messages": {
+        "suppressGitMissingWarning": true
+    },
+    "terminal.integrated.profiles.osx": {
+        "zsh": "/bin/zsh"
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.explorerKind": "external",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.startupEditor": "none",
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "redhat.telemetry.enabled": false,
+    "workbench.editor.enablePreview": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "editor.tabSize": 2,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "settingsSync.ignoredSettings": [
+        "-window.zoomLevel"
+    ],
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+    "gist.profileOptions": {},
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "prettier.printWidth": 120,
+    "prettier.singleQuote": true,
+    "svelte.plugin.svelte.format.config.printWidth": 120,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "docsYaml.telemetry.enableTelemetry": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "extensions.ignoreRecommendations": true,
+    "editor.tokenColorCustomizations": {
+        "[Tokyo Night Storm]": {
+            "textMateRules": [{
+                "scope": [
+                    "comment",
+                    "meta.var.expr storage.type",
+                    "keyword.control.flow",
+                    "keyword.control.return",
+                    "meta.directive.vue punctuation.separator.key-value.html",
+                    "meta.directive.vue entity.other.attribute-name.html",
+                    "tag.decorator.js entity.name.tag.js",
+                    "tag.decorator.js punctuation.definition.tag.js",
+                    "storage.modifier"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }]
+        }
+    },
+    "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+    "theme-timer.enable": true,
+    "theme-timer.themes": [
+        {
+            // "theme": "Default Dark+",
+            "theme": "GitHub Light Default",
+            "startTime": "3:30:00",
+            "endTime": "3:30:01"
+        },
+        {
+            // "theme": "Default Dark+",
+            // "theme": "GitHub Light Default",
+            "theme": "Catppuccin Macchiato",
+            "startTime": "3:30:01",
+            "endTime": "3:29:59"
+        },
+    ],
+    "go.toolsManagement.autoUpdate": false,
+    "go.toolsManagement.checkForUpdates": "off",
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+    },
+    "go.alternateTools": {
+        "gopls": {{ printf "%s/.ya/tools/v4/gopls-darwin-arm64/gopls" .chezmoi.destDir | quote }}
+    },
+    "gopls": {
+        "build.arcadiaIndexDirs": [
+            {{ printf "%s/.cloudia/cloud/cloud-go/bootstrap/" .chezmoi.destDir | quote }},
+            {{ printf "%s/.cloudia/cloud/cicd/" .chezmoi.destDir | quote }},
+        ],
+    },
+    "go.toolsEnvVars": {
+        "CGO_ENABLED": "0",
+        // "GOFLAGS": "-mod=vendor",
+        "GOPRIVATE": "*.yandex-team.ru,*.yandexcloud.net,arc.yandex.net"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "tehnix.vscode-tidymarkdown"
+    },
+    "yaml.maxItemsComputed": 10000,
+    "yaml.customTags": [
+    ],
+    "npm.keybindingsChangedWarningShown": true,
+    "workbench.colorCustomizations": {
+    
+    },
+    "git.mergeEditor": false,
+    "settingsSync.ignoredExtensions": [
+        "perseus.vscode-yandex-arc"
+    ],
+    "vscode-yandex-arc.enableAutoupdate": true,
+    "yaml.schemas": {
+{{- $docsYamlSchema := joinPath .chezmoi.destDir ".vscode" "extensions" "docsmsft.docs-yaml-1.0.6" "dist" "toc.schema.json" }}
+{{- if stat $docsYamlSchema }}
+        {{ printf "file://%s" $docsYamlSchema | quote }}: "/toc\\.yml/i"
+{{- end }}
+    },
+    "editor.lineHeight": 1.3,
+    "window.autoDetectColorScheme": true,
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false,
+    },
+    "terraform.format.enable": false,
+    "[terraform]": {
+        "editor.formatOnSave": false,
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.semanticTokenColorCustomizations": {
+
+    },
+    "yaml.format.singleQuote": true,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    "workbench.preferredHighContrastLightColorTheme": "GitHub Light Default",
+    "editor.fontSize": 14,
+    "python.autoComplete.extraPaths": [
+        "/home/bratushkadan/.arcadia/taxi/backend-py3/libraries/client-yql"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/bratushkadan/.arcadia/taxi/backend-py3/libraries/client-yql",
+        
+    ],
+    "java.trace.server": "verbose",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "python.terminal.launchArgs": [],
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "editor.lineNumbers": "relative",
+    "editor.accessibilitySupport": "off",
+    "vim.disableExtension": true,
+    "terminal.integrated.fontSize": 14,
+    "markdown.preview.fontSize": 16,
+    "vs-kubernetes": {
+        "vs-kubernetes.namespace": "",
+        "vs-kubernetes.kubectl-path": "",
+        "vs-kubernetes.helm-path": "",
+        "vs-kubernetes.minikube-path": "",
+        "vs-kubernetes.kubectlVersioning": "user-provided",
+        "vs-kubernetes.outputFormat": "yaml",
+        "vs-kubernetes.kubeconfig": "",
+        "vs-kubernetes.knownKubeconfigs": [],
+        "vs-kubernetes.autoCleanupOnDebugTerminate": false,
+        "vs-kubernetes.nodejs-autodetect-remote-root": true,
+        "vs-kubernetes.nodejs-remote-root": "",
+        "vs-kubernetes.nodejs-debug-port": 9229,
+        "vs-kubernetes.dotnet-vsdbg-path": "~/vsdbg/vsdbg",
+        "vs-kubernetes.local-tunnel-debug-provider": "",
+        "checkForMinikubeUpgrade": true,
+        "imageBuildTool": "Docker",
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "yaml.format.enable": false,
+    "window.confirmSaveUntitledWorkspace": false,
+    "docker.extension.enableComposeLanguageServer": false,
+    "roo-cline.allowedCommands": [
+        "git log",
+        "git diff",
+        "git show"
+    ],
+    "roo-cline.deniedCommands": [
+        "echo"
+    ],
+    "chat.agent.enabled": false,
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "roo-cline.debug": false,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "vscode-yandex-arc.arcStatusUpdateMode": "delayed",
+}

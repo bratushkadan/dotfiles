@@ -1,0 +1,29 @@
+{{ if and (eq .chezmoi.os "darwin") (lookPath "codium") -}}
+{{- $manifestDir := joinPath .chezmoi.sourceDir ".." "vscodium" -}}
+{{- $vsixDir := env "VSCODIUM_VSIX_DIR" | default (joinPath .chezmoi.destDir "Downloads" "vscodium-vsix") -}}
+#!/bin/sh
+set -eu
+
+installed=$(codium --list-extensions --show-versions)
+set --
+{{ range splitList "\n" (include (joinPath $manifestDir "extensions.tsv") | trim) -}}
+{{- $extension := first (splitList "\t" .) -}}
+if ! printf '%s\n' "$installed" | grep -Fxiq -- {{ shellQuote $extension }}; then
+    set -- "$@" --install-extension {{ shellQuote $extension }}
+fi
+{{ end }}
+{{ range splitList "\n" (include (joinPath $manifestDir "local-extensions.tsv") | trim) -}}
+{{- $extension := first (splitList "\t" .) -}}
+{{- $package := joinPath $vsixDir (printf "%s.vsix" $extension) -}}
+if ! printf '%s\n' "$installed" | grep -Fxiq -- {{ shellQuote $extension }}; then
+{{- if stat $package }}
+    set -- "$@" --install-extension {{ shellQuote $package }}
+{{- else }}
+    printf 'VSCodium: missing local package %s\n' {{ shellQuote $package }} >&2
+{{- end }}
+fi
+{{ end }}
+if [ "$#" -gt 0 ]; then
+    codium --do-not-include-pack-dependencies "$@"
+fi
+{{ end -}}

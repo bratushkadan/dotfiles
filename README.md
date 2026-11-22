@@ -22,9 +22,13 @@ and work Codex rules. When you turn off work mode on an existing machine,
 chezmoi skips those optional paths on future runs. Move any previously
 installed work files aside if you also want them out of your home directory.
 
-The default symlink mode keeps plain files such as Neovim's lockfile linked
-to the checkout. For generated configs, use `chezmoi edit --apply <path>`
-to edit the source and apply the rendered result.
+Chezmoi installs regular files by default. Entries with a `symlink_`
+prefix create links. Neovim's `~/.config/nvim/lazy-lock.json` links to
+[`.lazy-lock.json`](home/private_dot_config/nvim/.lazy-lock.json) in this checkout so plugin updates
+are visible in Git.
+
+Use `chezmoi edit --apply <path>` to edit a managed source file and apply
+the result.
 
 ## macOS setup
 

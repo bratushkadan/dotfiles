@@ -1,0 +1,38 @@
+[general]
+# Оставь активной только одну строку import. Изменения применяются автоматически.
+# Catppuccin Mocha — мягкая пастельная палитра.
+# import = ["themes/catppuccin_mocha.toml"]
+# Tokyo Night — холодная палитра с синими и фиолетовыми акцентами.
+# import = ["themes/tokyo_night.toml"]
+# Gruvbox Dark — тёплые землистые цвета.
+# import = ["themes/gruvbox_dark.toml"]
+# Nord — приглушённая серо-синяя палитра.
+import = ["themes/nord.toml"]
+# Rose Pine — мягкие розовые и золотистые акценты.
+# import = ["themes/rose_pine.toml"]
+# One Dark — нейтральный тёмный фон и контрастные акценты.
+# import = ["themes/one_dark.toml"]
+
+[window]
+opacity = 0.8
+blur = true
+
+[colors]
+transparent_background_colors = true
+
+[font]
+size = 20.0
+# size = 24.0
+
+[font.normal]
+family = "UbuntuMono Nerd Font"
+# family = "MesloLGSDZ Nerd Font Mono"
+# family = "0xProto Nerd Font Mono"
+# family = "FiraMono Nerd Font Mono"
+# family = "JetBrainsMonoNerdFontCompleteM"
+
+[env]
+TERM = "xterm-256color"
+
+# --- colors
+# https://github.com/alacritty/alacritty-theme

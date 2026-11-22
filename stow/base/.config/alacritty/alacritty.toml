@@ -3,11 +3,11 @@
 # Catppuccin Mocha — мягкая пастельная палитра.
 # import = ["themes/catppuccin_mocha.toml"]
 # Tokyo Night — холодная палитра с синими и фиолетовыми акцентами.
-# import = ["themes/tokyo_night.toml"]
+import = ["themes/tokyo_night.toml"]
 # Gruvbox Dark — тёплые землистые цвета.
 # import = ["themes/gruvbox_dark.toml"]
 # Nord — приглушённая серо-синяя палитра.
-import = ["themes/nord.toml"]
+# import = ["themes/nord.toml"]
 # Rose Pine — мягкие розовые и золотистые акценты.
 # import = ["themes/rose_pine.toml"]
 # One Dark — нейтральный тёмный фон и контрастные акценты.
